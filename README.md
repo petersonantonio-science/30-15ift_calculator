@@ -85,3 +85,8 @@ Todos os dados são derivados de uma planilha acadêmica de referência e valida
 ## Licença
 
 Este projeto é de uso acadêmico e educacional.
+
+## Author
+Peterson Antonio
+Sports Scientist & Developer
+Brazil
