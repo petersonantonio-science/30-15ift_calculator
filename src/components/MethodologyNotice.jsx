@@ -1,6 +1,8 @@
 import { S } from "../styles";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function MethodologyNotice({ type = "app", children }) {
+  const { t } = useLanguage();
   const styles = {
     app: { borderColor: S.accent, icon: "\u26a0" },
     divergence: { borderColor: "#e74c3c", icon: "\u26a0" },
@@ -25,13 +27,9 @@ export default function MethodologyNotice({ type = "app", children }) {
       {children || (
         <>
           <strong style={{ color: S.textSecondary }}>
-            {cfg.icon} Nota metodol&oacute;gica:
+            {cfg.icon} {t("methodology.title")}
           </strong>{" "}
-          a &aacute;rea por jogador (ApP = m&sup2; / n&ordm; de jogadores de
-          campo) &eacute; calculada com base nos jogadores de linha, excluindo
-          goleiros e coringas, pois estes ocupam espa&ccedil;os funcionalmente
-          distintos. O total de participantes deve ser considerado separadamente
-          para dimensionamento log&iacute;stico do campo.
+          {t("methodology.text")}
         </>
       )}
     </div>

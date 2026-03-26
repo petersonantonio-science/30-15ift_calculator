@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function PwaPrompts() {
+  const { t } = useLanguage();
   const [installEvt, setInstallEvt] = useState(null);
   const [showUpdate, setShowUpdate] = useState(false);
   const [dismissed, setDismissed] = useState(false);
@@ -8,7 +10,6 @@ export default function PwaPrompts() {
   useEffect(() => {
     const onInstall = (e) => { e.preventDefault(); setInstallEvt(e); };
     const onUpdate = () => setShowUpdate(true);
-
     window.addEventListener("beforeinstallprompt", onInstall);
     window.addEventListener("sw-update-available", onUpdate);
     return () => {
@@ -24,10 +25,7 @@ export default function PwaPrompts() {
     setInstallEvt(null);
   };
 
-  const handleUpdate = () => {
-    setShowUpdate(false);
-    window.location.reload();
-  };
+  const handleUpdate = () => { setShowUpdate(false); window.location.reload(); };
 
   if (dismissed && !showUpdate) return null;
   if (!installEvt && !showUpdate) return null;
@@ -46,17 +44,17 @@ export default function PwaPrompts() {
   if (showUpdate) {
     return (
       <div className="pwa-bar" style={bar}>
-        <span>Nova versao disponivel.</span>
-        <button onClick={handleUpdate} style={{ ...btn, background: "#00e676", color: "#000" }}>Atualizar</button>
+        <span>{t("pwa.novaVersao")}</span>
+        <button onClick={handleUpdate} style={{ ...btn, background: "#00e676", color: "#000" }}>{t("pwa.atualizar")}</button>
       </div>
     );
   }
 
   return (
     <div className="pwa-bar" style={bar}>
-      <span>Instale o app para acesso offline.</span>
-      <button onClick={handleInstall} style={{ ...btn, background: "#00e676", color: "#000" }}>Instalar</button>
-      <button onClick={() => setDismissed(true)} style={{ ...btn, background: "transparent", color: "#8a9bb0", border: "1px solid #21262d" }}>Depois</button>
+      <span>{t("pwa.instalarMsg")}</span>
+      <button onClick={handleInstall} style={{ ...btn, background: "#00e676", color: "#000" }}>{t("pwa.instalar")}</button>
+      <button onClick={() => setDismissed(true)} style={{ ...btn, background: "transparent", color: "#8a9bb0", border: "1px solid #21262d" }}>{t("pwa.depois")}</button>
     </div>
   );
 }

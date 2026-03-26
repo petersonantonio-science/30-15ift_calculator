@@ -1,4 +1,6 @@
 import { S } from "../styles";
+import { useLanguage } from "../context/LanguageContext";
+import { resolveField } from "../utils/resolveField";
 import MANIPULATION_DATA from "../data/manipulation.json";
 
 const MANIPULATION = MANIPULATION_DATA.map(m => ({
@@ -13,16 +15,16 @@ const MANIPULATION = MANIPULATION_DATA.map(m => ({
   id: m.id,
 }));
 
-// P0-3: Badge para itens com divergência
 function DivergenceBadge({ status }) {
+  const { t } = useLanguage();
   if (!status || status === "aligned") return null;
   const cfg = {
-    divergent: { bg: "rgba(231,76,60,.15)", fg: "#e74c3c", label: "Divergente" },
-    pending: { bg: "rgba(243,156,18,.15)", fg: "#f39c12", label: "Pendente" },
+    divergent: { bg: "rgba(231,76,60,.15)", fg: "#e74c3c", label: t("divergence.divergente") },
+    pending: { bg: "rgba(243,156,18,.15)", fg: "#f39c12", label: t("divergence.pendente") },
   };
   const c = cfg[status] || cfg.pending;
   return (
-    <span title={`Status: ${c.label} — verificar contra planilha`} style={{
+    <span title={t("divergence.statusTooltip", { label: c.label })} style={{
       display: "inline-block", padding: "1px 6px", borderRadius: 4,
       fontSize: 8, fontWeight: 700, letterSpacing: .5,
       background: c.bg, color: c.fg, marginLeft: 6, verticalAlign: "middle",
@@ -31,43 +33,46 @@ function DivergenceBadge({ status }) {
 }
 
 export default function ManipulationView() {
+  const { t, lang } = useLanguage();
+  const r = (field) => resolveField(field, lang);
   return (
     <div>
-      <h2 style={{ fontFamily: S.heading, fontSize: 16, color: S.textPrimary, marginBottom: 4 }}>VARIÁVEIS DE MANIPULAÇÃO</h2>
-      <p style={{ fontSize: 11, color: S.textMuted, marginBottom: 20 }}>Efeitos fisiológicos das variáveis de manipulação dos jogos reduzidos</p>
+      <h2 style={{ fontFamily: S.heading, fontSize: 16, color: S.textPrimary, marginBottom: 4 }}>{t("manipulation.title")}</h2>
+      <p style={{ fontSize: 11, color: S.textMuted, marginBottom: 20 }}>{t("manipulation.subtitle")}</p>
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         {MANIPULATION.map((m, i) => {
-          const borderColor = m.efeitoFC.includes("↑↑") ? "#e74c3c" : m.efeitoFC.includes("↑") ? "#f39c12" : m.efeitoFC.includes("↓") ? "#3498db" : S.textMuted;
+          const fcText = resolveField(m.efeitoFC, "pt");
+          const borderColor = fcText.includes("↑↑") ? "#e74c3c" : fcText.includes("↑") ? "#f39c12" : fcText.includes("↓") ? "#3498db" : S.textMuted;
           return (
             <div key={i} className="manip-card" style={{
               background: S.surface, borderRadius: 12, padding: "14px 18px",
               borderLeft: `3px solid ${borderColor}`,
             }}>
               <div>
-                <div style={{ fontSize: 9, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 1 }}>Variável</div>
+                <div style={{ fontSize: 9, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 1 }}>{t("manipulation.variavel")}</div>
                 <div style={{ fontWeight: 700, fontSize: 12, color: S.textPrimary }}>
-                  {m.variavel}
+                  {r(m.variavel)}
                   <DivergenceBadge status={m.sourceStatus} />
                 </div>
               </div>
               <div>
-                <div style={{ fontSize: 9, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 1 }}>Manipulação</div>
-                <div style={{ fontSize: 11, color: S.accent, fontWeight: 600 }}>{m.manip}</div>
+                <div style={{ fontSize: 9, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 1 }}>{t("manipulation.manipulacao")}</div>
+                <div style={{ fontSize: 11, color: S.accent, fontWeight: 600 }}>{r(m.manip)}</div>
               </div>
               <div>
-                <div style={{ fontSize: 9, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 1 }}>FC / Intens.</div>
-                <div style={{ fontSize: 11, fontFamily: S.mono }}>{m.efeitoFC}</div>
+                <div style={{ fontSize: 9, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 1 }}>{t("manipulation.fcIntens")}</div>
+                <div style={{ fontSize: 11, fontFamily: S.mono }}>{r(m.efeitoFC)}</div>
               </div>
               <div>
-                <div style={{ fontSize: 9, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 1 }}>Distância</div>
-                <div style={{ fontSize: 11, fontFamily: S.mono }}>{m.efeitoDist}</div>
+                <div style={{ fontSize: 9, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 1 }}>{t("manipulation.distancia")}</div>
+                <div style={{ fontSize: 11, fontFamily: S.mono }}>{r(m.efeitoDist)}</div>
               </div>
               <div>
-                <div style={{ fontSize: 9, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 1 }}>Alta Vel.</div>
-                <div style={{ fontSize: 11, fontFamily: S.mono }}>{m.efeitoVel}</div>
+                <div style={{ fontSize: 9, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 1 }}>{t("manipulation.altaVel")}</div>
+                <div style={{ fontSize: 11, fontFamily: S.mono }}>{r(m.efeitoVel)}</div>
               </div>
               <div>
-                <div style={{ fontSize: 9, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 1 }}>Ref.</div>
+                <div style={{ fontSize: 9, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1, marginBottom: 1 }}>{t("manipulation.ref")}</div>
                 <div style={{ fontSize: 10, color: S.textMuted, cursor: m.refCompleta ? "help" : "default" }}
                      title={m.refCompleta || m.ref}>{m.ref}</div>
               </div>

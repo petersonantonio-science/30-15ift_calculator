@@ -5,15 +5,27 @@
     "classif": "SSG",
     "jogCampo": 4,
     "gk": "Não",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "120–160",
     "app": "30–40",
-    "objetivo": "Potência aeróbia / acelerações",
+    "objetivo": {
+      "pt": "Potência aeróbia / acelerações",
+      "en": "Aerobic power / accelerations",
+      "es": "Potencia aeróbica / aceleraciones"
+    },
     "grupoA": "Muito alta",
     "grupoB": "Alta",
     "grupoC": "Alta",
     "fc": "90–93%",
-    "variavel": "Área por jogador",
+    "variavel": {
+      "pt": "Área por jogador",
+      "en": "Area per player",
+      "es": "Área por jugador"
+    },
     "ref": "Hill-Haas et al., 2011",
     "serie": null,
     "rec": null,
@@ -62,15 +74,27 @@
     "classif": "SSG",
     "jogCampo": 4,
     "gk": "Sim",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "160–200",
     "app": "40–50",
-    "objetivo": "Potência aeróbia + ação do GK",
+    "objetivo": {
+      "pt": "Potência aeróbia + ação do GK",
+      "en": "Aerobic power + GK action",
+      "es": "Potencia aeróbica + acción del POR"
+    },
     "grupoA": "Alta",
     "grupoB": "Alta",
     "grupoC": "Muito alta",
     "fc": "88–92%",
-    "variavel": "Presença do GK",
+    "variavel": {
+      "pt": "Presença do GK",
+      "en": "GK presence",
+      "es": "Presencia del POR"
+    },
     "ref": "Rodríguez-Fernández et al., 2024",
     "serie": null,
     "rec": null,
@@ -119,15 +143,27 @@
     "classif": "SSG",
     "jogCampo": 4,
     "gk": "Não",
-    "coringa": "Sim (interno)",
+    "coringa": {
+      "pt": "Sim (interno)",
+      "en": "Yes (inside joker)",
+      "es": "Sí (comodín interno)"
+    },
     "areaTotal": "120–160",
     "app": "30–40",
-    "objetivo": "Superioridade / posse",
+    "objetivo": {
+      "pt": "Superioridade / posse",
+      "en": "Overload / possession",
+      "es": "Superioridad / posesión"
+    },
     "grupoA": "Alta",
     "grupoB": "Alta",
     "grupoC": "Muito alta",
     "fc": "87–91%",
-    "variavel": "Posição do coringa",
+    "variavel": {
+      "pt": "Posição do coringa",
+      "en": "Joker position",
+      "es": "Posición del comodín"
+    },
     "ref": "Rodríguez-Fernández et al., 2024",
     "serie": null,
     "rec": null,
@@ -176,15 +212,27 @@
     "classif": "SSG",
     "jogCampo": 6,
     "gk": "Não",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "180–240",
     "app": "30–40",
-    "objetivo": "Resistência aeróbia / intens. próx. jogo",
+    "objetivo": {
+      "pt": "Resistência aeróbia / intens. próx. jogo",
+      "en": "Aerobic endurance / near-match intensity",
+      "es": "Resistencia aeróbica / intensidad cercana al partido"
+    },
     "grupoA": "Alta",
     "grupoB": "Muito alta",
     "grupoC": "Muito alta",
     "fc": "88–92%",
-    "variavel": "Área por jogador",
+    "variavel": {
+      "pt": "Área por jogador",
+      "en": "Area per player",
+      "es": "Área por jugador"
+    },
     "ref": "Hill-Haas et al., 2011",
     "serie": null,
     "rec": null,
@@ -233,15 +281,27 @@
     "classif": "SSG",
     "jogCampo": 6,
     "gk": "Sim",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "240–320",
     "app": "40–53",
-    "objetivo": "Resistência + transições",
+    "objetivo": {
+      "pt": "Resistência + transições",
+      "en": "Endurance + transitions",
+      "es": "Resistencia + transiciones"
+    },
     "grupoA": "Moderada",
     "grupoB": "Alta",
     "grupoC": "Muito alta",
     "fc": "85–90%",
-    "variavel": "Dimensões do campo",
+    "variavel": {
+      "pt": "Dimensões do campo",
+      "en": "Field dimensions",
+      "es": "Dimensiones del campo"
+    },
     "ref": "Casamichana & Castellano, 2010",
     "serie": null,
     "rec": null,
@@ -290,15 +350,27 @@
     "classif": "SSG",
     "jogCampo": 6,
     "gk": "Não",
-    "coringa": "Sim (externo)",
+    "coringa": {
+      "pt": "Sim (externo)",
+      "en": "Yes (outside joker)",
+      "es": "Sí (comodín externo)"
+    },
     "areaTotal": "200–280",
     "app": "33–47",
-    "objetivo": "Posse / criação de espaço",
+    "objetivo": {
+      "pt": "Posse / criação de espaço",
+      "en": "Possession / space creation",
+      "es": "Posesión / creación de espacio"
+    },
     "grupoA": "Moderada",
     "grupoB": "Alta",
     "grupoC": "Alta",
     "fc": "84–89%",
-    "variavel": "Tipo de coringa (int/ext)",
+    "variavel": {
+      "pt": "Tipo de coringa (int/ext)",
+      "en": "Joker type (int/ext)",
+      "es": "Tipo de comodín (int/ext)"
+    },
     "ref": "Rodríguez-Fernández et al., 2024",
     "serie": null,
     "rec": null,
@@ -347,15 +419,27 @@
     "classif": "SSG",
     "jogCampo": 6,
     "gk": "Sim",
-    "coringa": "Sim",
+    "coringa": {
+      "pt": "Sim",
+      "en": "Yes",
+      "es": "Sí"
+    },
     "areaTotal": "280–360",
     "app": "47–60",
-    "objetivo": "Posse + finalização",
+    "objetivo": {
+      "pt": "Posse + finalização",
+      "en": "Possession + finishing",
+      "es": "Posesión + finalización"
+    },
     "grupoA": "Moderada",
     "grupoB": "Moderada",
     "grupoC": "Alta",
     "fc": "83–88%",
-    "variavel": "Coringa interno vs externo",
+    "variavel": {
+      "pt": "Coringa interno vs externo",
+      "en": "Inside vs outside joker",
+      "es": "Comodín interno vs externo"
+    },
     "ref": "Rodríguez-Fernández et al., 2024",
     "serie": null,
     "rec": null,
@@ -404,15 +488,27 @@
     "classif": "SSG",
     "jogCampo": 8,
     "gk": "Não",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "320–480",
     "app": "40–60",
-    "objetivo": "Resistência aeróbia / zona de alta intens.",
+    "objetivo": {
+      "pt": "Resistência aeróbia / zona de alta intens.",
+      "en": "Aerobic endurance / high-intensity zone",
+      "es": "Resistencia aeróbica / zona de alta intens."
+    },
     "grupoA": "Moderada",
     "grupoB": "Alta",
     "grupoC": "Muito alta",
     "fc": "85–90%",
-    "variavel": "Área por jogador",
+    "variavel": {
+      "pt": "Área por jogador",
+      "en": "Area per player",
+      "es": "Área por jugador"
+    },
     "ref": "Hill-Haas et al., 2011",
     "serie": null,
     "rec": null,
@@ -461,15 +557,27 @@
     "classif": "SSG",
     "jogCampo": 8,
     "gk": "Sim",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "400–560",
     "app": "50–70",
-    "objetivo": "Demanda de partida / transições",
+    "objetivo": {
+      "pt": "Demanda de partida / transições",
+      "en": "Match demand / transitions",
+      "es": "Demanda de partido / transiciones"
+    },
     "grupoA": "Baixa",
     "grupoB": "Moderada",
     "grupoC": "Alta",
     "fc": "83–88%",
-    "variavel": "Área com/sem GK",
+    "variavel": {
+      "pt": "Área com/sem GK",
+      "en": "Area with/without GK",
+      "es": "Área con/sin POR"
+    },
     "ref": "Casamichana et al., 2020",
     "serie": null,
     "rec": null,
@@ -518,15 +626,27 @@
     "classif": "SSG",
     "jogCampo": 8,
     "gk": "Não",
-    "coringa": "Sim (rotativo)",
+    "coringa": {
+      "pt": "Sim (rotativo)",
+      "en": "Yes (rotating joker)",
+      "es": "Sí (comodín rotativo)"
+    },
     "areaTotal": "360–480",
     "app": "45–60",
-    "objetivo": "Superioridade numérica / posse",
+    "objetivo": {
+      "pt": "Superioridade numérica / posse",
+      "en": "Numerical overload / possession",
+      "es": "Superioridad numérica / posesión"
+    },
     "grupoA": "Moderada",
     "grupoB": "Alta",
     "grupoC": "Alta",
     "fc": "84–89%",
-    "variavel": "Rotação do coringa",
+    "variavel": {
+      "pt": "Rotação do coringa",
+      "en": "Joker rotation",
+      "es": "Rotación del comodín"
+    },
     "ref": "Hill-Haas et al., 2010",
     "serie": null,
     "rec": null,
@@ -575,15 +695,27 @@
     "classif": "MSG",
     "jogCampo": 10,
     "gk": "Não",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "500–700",
     "app": "50–70",
-    "objetivo": "Equilíbrio físico-tático",
+    "objetivo": {
+      "pt": "Equilíbrio físico-tático",
+      "en": "Physical-tactical balance",
+      "es": "Equilibrio físico-táctico"
+    },
     "grupoA": "Baixa",
     "grupoB": "Moderada",
     "grupoC": "Alta",
     "fc": "80–86%",
-    "variavel": "Formato do campo",
+    "variavel": {
+      "pt": "Formato do campo",
+      "en": "Field format",
+      "es": "Formato del campo"
+    },
     "ref": "Clemente et al., 2023",
     "serie": null,
     "rec": null,
@@ -632,15 +764,27 @@
     "classif": "MSG",
     "jogCampo": 10,
     "gk": "Sim",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "600–900",
     "app": "60–90",
-    "objetivo": "Replicar demanda de jogo / sprints",
+    "objetivo": {
+      "pt": "Replicar demanda de jogo / sprints",
+      "en": "Replicate match demand / sprints",
+      "es": "Replicar demanda de partido / sprints"
+    },
     "grupoA": "Baixa",
     "grupoB": "Moderada",
     "grupoC": "Alta",
     "fc": "81–87%",
-    "variavel": "Área por jogador",
+    "variavel": {
+      "pt": "Área por jogador",
+      "en": "Area per player",
+      "es": "Área por jugador"
+    },
     "ref": "Casamichana et al., 2020",
     "serie": null,
     "rec": null,
@@ -689,15 +833,27 @@
     "classif": "MSG",
     "jogCampo": 10,
     "gk": "Não",
-    "coringa": "Sim (2)",
+    "coringa": {
+      "pt": "Sim (2)",
+      "en": "Yes (2 jokers)",
+      "es": "Sí (2 comodines)"
+    },
     "areaTotal": "550–750",
     "app": "55–75",
-    "objetivo": "Posse / superioridade tática",
+    "objetivo": {
+      "pt": "Posse / superioridade tática",
+      "en": "Possession / tactical overload",
+      "es": "Posesión / superioridad táctica"
+    },
     "grupoA": "Baixa",
     "grupoB": "Moderada",
     "grupoC": "Moderada",
     "fc": "79–85%",
-    "variavel": "Número de coringas",
+    "variavel": {
+      "pt": "Número de coringas",
+      "en": "Number of jokers",
+      "es": "Número de comodines"
+    },
     "ref": "Hill-Haas et al., 2010",
     "serie": null,
     "rec": null,
@@ -746,15 +902,27 @@
     "classif": "MSG",
     "jogCampo": 12,
     "gk": "Não",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "720–1080",
     "app": "60–90",
-    "objetivo": "Demanda de jogo / velocidade alta",
+    "objetivo": {
+      "pt": "Demanda de jogo / velocidade alta",
+      "en": "Match demand / high speed",
+      "es": "Demanda de partido / alta velocidad"
+    },
     "grupoA": "Baixa",
     "grupoB": "Baixa",
     "grupoC": "Moderada",
     "fc": "78–84%",
-    "variavel": "Dimensões",
+    "variavel": {
+      "pt": "Dimensões",
+      "en": "Dimensions",
+      "es": "Dimensiones"
+    },
     "ref": "Clemente et al., 2023",
     "serie": null,
     "rec": null,
@@ -803,15 +971,27 @@
     "classif": "MSG",
     "jogCampo": 12,
     "gk": "Sim",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "840–1200",
     "app": "70–100",
-    "objetivo": "Replicar partida / sprints",
+    "objetivo": {
+      "pt": "Replicar partida / sprints",
+      "en": "Replicate match / sprints",
+      "es": "Replicar partido / sprints"
+    },
     "grupoA": "Muito baixa",
     "grupoB": "Baixa",
     "grupoC": "Moderada",
     "fc": "79–85%",
-    "variavel": "Área com GK",
+    "variavel": {
+      "pt": "Área com GK",
+      "en": "Area with GK",
+      "es": "Área con POR"
+    },
     "ref": "Casamichana et al., 2020",
     "serie": null,
     "rec": null,
@@ -860,15 +1040,27 @@
     "classif": "MSG",
     "jogCampo": 14,
     "gk": "Não",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "980–1400",
     "app": "70–100",
-    "objetivo": "Velocidade máxima / demanda de jogo",
+    "objetivo": {
+      "pt": "Velocidade máxima / demanda de jogo",
+      "en": "Top speed / match demand",
+      "es": "Velocidad máxima / demanda de partido"
+    },
     "grupoA": "Muito baixa",
     "grupoB": "Baixa",
     "grupoC": "Moderada",
     "fc": "77–83%",
-    "variavel": "Área ampla",
+    "variavel": {
+      "pt": "Área ampla",
+      "en": "Large area",
+      "es": "Área amplia"
+    },
     "ref": "Clemente et al., 2023",
     "serie": null,
     "rec": null,
@@ -917,15 +1109,27 @@
     "classif": "MSG",
     "jogCampo": 14,
     "gk": "Sim",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "1120–1600",
     "app": "80–114",
-    "objetivo": "Replicar jogo oficial / LSR",
+    "objetivo": {
+      "pt": "Replicar jogo oficial / LSR",
+      "en": "Replicate official match / LSR",
+      "es": "Replicar partido oficial / LSR"
+    },
     "grupoA": "Muito baixa",
     "grupoB": "Muito baixa",
     "grupoC": "Baixa",
     "fc": "78–84%",
-    "variavel": "ApP ≥ 150 m²",
+    "variavel": {
+      "pt": "ApP ≥ 150 m²",
+      "en": "ApP ≥ 150 m²",
+      "es": "ApP ≥ 150 m²"
+    },
     "ref": "Clemente et al., 2023",
     "serie": null,
     "rec": null,
@@ -974,15 +1178,27 @@
     "classif": "LSG",
     "jogCampo": 16,
     "gk": "Não",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "1280–2000",
     "app": "80–125",
-    "objetivo": "Alta velocidade / sprint",
+    "objetivo": {
+      "pt": "Alta velocidade / sprint",
+      "en": "High speed / sprint",
+      "es": "Alta velocidad / sprint"
+    },
     "grupoA": "Muito baixa",
     "grupoB": "Muito baixa",
     "grupoC": "Baixa",
     "fc": "75–81%",
-    "variavel": "Área por jogador",
+    "variavel": {
+      "pt": "Área por jogador",
+      "en": "Area per player",
+      "es": "Área por jugador"
+    },
     "ref": "Clemente et al., 2023",
     "serie": null,
     "rec": null,
@@ -1031,15 +1247,27 @@
     "classif": "LSG",
     "jogCampo": 16,
     "gk": "Sim",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "1440–2200",
     "app": "90–137",
-    "objetivo": "Replicar jogo oficial / LSR + sprint",
+    "objetivo": {
+      "pt": "Replicar jogo oficial / LSR + sprint",
+      "en": "Replicate official match / LSR + sprint",
+      "es": "Replicar partido oficial / LSR + sprint"
+    },
     "grupoA": "Muito baixa",
     "grupoB": "Muito baixa",
     "grupoC": "Baixa",
     "fc": "76–82%",
-    "variavel": "ApP ≥ 160 m²",
+    "variavel": {
+      "pt": "ApP ≥ 160 m²",
+      "en": "ApP ≥ 160 m²",
+      "es": "ApP ≥ 160 m²"
+    },
     "ref": "Casamichana et al., 2020",
     "serie": null,
     "rec": null,
@@ -1088,15 +1316,27 @@
     "classif": "LSG",
     "jogCampo": 18,
     "gk": "Sim",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "1800–2700",
     "app": "100–150",
-    "objetivo": "Demanda de partida completa",
+    "objetivo": {
+      "pt": "Demanda de partida completa",
+      "en": "Full match demand",
+      "es": "Demanda de partido completa"
+    },
     "grupoA": "Muito baixa",
     "grupoB": "Muito baixa",
     "grupoC": "Muito baixa",
     "fc": "75–80%",
-    "variavel": "Sprint > 25 km·h⁻¹",
+    "variavel": {
+      "pt": "Sprint > 25 km·h⁻¹",
+      "en": "Sprint > 25 km·h⁻¹",
+      "es": "Sprint > 25 km·h⁻¹"
+    },
     "ref": "Clemente et al., 2023",
     "serie": null,
     "rec": null,
@@ -1145,15 +1385,27 @@
     "classif": "LSG",
     "jogCampo": 20,
     "gk": "Sim",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "2000–3200",
     "app": "100–160",
-    "objetivo": "Jogo formal reduzido / sprints máx.",
+    "objetivo": {
+      "pt": "Jogo formal reduzido / sprints máx.",
+      "en": "Reduced formal match / max. sprints",
+      "es": "Juego formal reducido / sprints máx."
+    },
     "grupoA": "Muito baixa",
     "grupoB": "Muito baixa",
     "grupoC": "Muito baixa",
     "fc": "74–80%",
-    "variavel": "ApP ≥ 200 m² para VHSR",
+    "variavel": {
+      "pt": "ApP ≥ 200 m² para VHSR",
+      "en": "ApP ≥ 200 m² for VHSR",
+      "es": "ApP ≥ 200 m² para VHSR"
+    },
     "ref": "Kobi et al., 2026",
     "serie": null,
     "rec": null,
@@ -1202,15 +1454,27 @@
     "classif": "LSG",
     "jogCampo": 22,
     "gk": "Sim",
-    "coringa": "Não",
+    "coringa": {
+      "pt": "Não",
+      "en": "No",
+      "es": "No"
+    },
     "areaTotal": "~6800",
     "app": "~309",
-    "objetivo": "Referência — jogo oficial",
+    "objetivo": {
+      "pt": "Referência — jogo oficial",
+      "en": "Reference — official match",
+      "es": "Referencia — partido oficial"
+    },
     "grupoA": "—",
     "grupoB": "—",
     "grupoC": "—",
     "fc": "80–85%",
-    "variavel": "Referência",
+    "variavel": {
+      "pt": "Referência",
+      "en": "Reference",
+      "es": "Referencia"
+    },
     "ref": "Di Salvo et al., 2007",
     "serie": null,
     "rec": null,

@@ -1,8 +1,16 @@
 [
   {
     "group": "A",
-    "label": "Grupo A",
-    "description": "Menor capacidade",
+    "label": {
+      "pt": "Grupo A",
+      "en": "Group A",
+      "es": "Grupo A"
+    },
+    "description": {
+      "pt": "Menor capacidade",
+      "en": "Lower fitness",
+      "es": "Menor capacidad"
+    },
     "vMin": 14,
     "vMax": 16,
     "color": "#e74c3c",
@@ -11,12 +19,24 @@
       "MSG": "Baixa / Muito baixa",
       "LSG": "Muito baixa"
     },
-    "detailedDesc": "V < 16,0 km/h⁻¹ → SSG / ApP reduzida (~30–60 m²/jog.)"
+    "detailedDesc": {
+      "pt": "V < 16,0 km/h⁻¹ → SSG / ApP reduzida (~30–60 m²/jog.)",
+      "en": "V < 16.0 km/h⁻¹ → SSG / reduced ApP (~30–60 m²/pl.)",
+      "es": "V < 16,0 km/h⁻¹ → SSG / ApP reducida (~30–60 m²/jug.)"
+    }
   },
   {
     "group": "B",
-    "label": "Grupo B",
-    "description": "Capacidade intermediária",
+    "label": {
+      "pt": "Grupo B",
+      "en": "Group B",
+      "es": "Grupo B"
+    },
+    "description": {
+      "pt": "Capacidade intermediária",
+      "en": "Moderate fitness",
+      "es": "Capacidad intermedia"
+    },
     "vMin": 16.5,
     "vMax": 18.5,
     "color": "#f39c12",
@@ -25,12 +45,24 @@
       "MSG": "Moderada / Baixa",
       "LSG": "Muito baixa"
     },
-    "detailedDesc": "V 16,5–18,5 km/h⁻¹ → MSG / ApP média (~60–120 m²/jog.)"
+    "detailedDesc": {
+      "pt": "V 16,5–18,5 km/h⁻¹ → MSG / ApP média (~60–120 m²/jog.)",
+      "en": "V 16.5–18.5 km/h⁻¹ → MSG / moderate ApP (~60–120 m²/pl.)",
+      "es": "V 16,5–18,5 km/h⁻¹ → MSG / ApP media (~60–120 m²/jug.)"
+    }
   },
   {
     "group": "C",
-    "label": "Grupo C",
-    "description": "Maior capacidade",
+    "label": {
+      "pt": "Grupo C",
+      "en": "Group C",
+      "es": "Grupo C"
+    },
+    "description": {
+      "pt": "Maior capacidade",
+      "en": "Higher fitness",
+      "es": "Mayor capacidad"
+    },
     "vMin": 19,
     "vMax": 22,
     "color": "#27ae60",
@@ -39,6 +71,10 @@
       "MSG": "Alta / Moderada",
       "LSG": "Baixa / Muito baixa"
     },
-    "detailedDesc": "V ≥ 19,0 km/h⁻¹ → LSG / ApP ampla (≥ 120 m²/jog.)"
+    "detailedDesc": {
+      "pt": "V ≥ 19,0 km/h⁻¹ → LSG / ApP ampla (≥ 120 m²/jog.)",
+      "en": "V ≥ 19.0 km/h⁻¹ → LSG / large ApP (≥ 120 m²/pl.)",
+      "es": "V ≥ 19,0 km/h⁻¹ → LSG / ApP amplia (≥ 120 m²/jug.)"
+    }
   }
 ]

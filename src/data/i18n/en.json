@@ -1,0 +1,180 @@
+{
+  "app": {
+    "title": "SMALL-SIDED GAMES",
+    "subtitle": "Prescription based on V{sub}30-15{/sub}IFT"
+  },
+  "tabs": {
+    "prescricao": "Prescription",
+    "calculadora": "Calculator",
+    "variaveis": "Variables"
+  },
+  "groups": {
+    "title": "Player legend",
+    "jogCampo": "Field players",
+    "jogCampoDesc": "outfield players (used for ApP calculation)",
+    "gk": "GK",
+    "gkDesc": "goalkeepers (excluded from ApP)",
+    "coringas": "Jokers",
+    "coringasDesc": "neutral players (excluded from ApP)",
+    "menorCapacidade": "Lower fitness",
+    "capacidadeIntermediaria": "Moderate fitness",
+    "maiorCapacidade": "Higher fitness"
+  },
+  "filters": {
+    "title": "Filters",
+    "todos": "All",
+    "todas": "All",
+    "grupo": "Group:",
+    "intensidade": "Intensity:",
+    "searchPlaceholder": "Search format...",
+    "searchAriaLabel": "Search game format",
+    "tipoDeJogo": "Game type"
+  },
+  "table": {
+    "formato": "Format",
+    "jogCampo": "Field pl.",
+    "jogCampoTooltip": "Field players (excl. GK and floaters)",
+    "area": "Area (m²)",
+    "app": "ApP",
+    "gk": "GK",
+    "coringa": "Joker",
+    "objetivo": "Objective",
+    "grupoA": "Group A",
+    "grupoB": "Group B",
+    "grupoC": "Group C",
+    "fc": "%HR",
+    "noResults": "No formats found with the selected filters.",
+    "scrollHint": "← Scroll sideways →",
+    "countOf": "{count} of {total} formats · Click row for details",
+    "variavelChave": "Key variable",
+    "referencia": "Reference",
+    "id": "ID"
+  },
+  "intensity": {
+    "title": "Intensity Legend",
+    "muitoAlta": "Very high",
+    "alta": "High",
+    "moderada": "Moderate",
+    "baixa": "Low",
+    "muitoBaixa": "Very low",
+    "descMuitoAlta": "Exceeds match demand · Short SSG · >90% HRmax",
+    "descAlta": "Near match demand · SSG/MSG · 85–90% HRmax",
+    "descModerada": "Slightly below · MSG · 80–86% HRmax",
+    "descBaixa": "Below match demand · MSG/LSG · 77–83% HRmax",
+    "descMuitoBaixa": "Well below · LSG · <80% HRmax"
+  },
+  "calculator": {
+    "title": "FIELD CALCULATOR",
+    "subtitle": "Dimensions by format and group. ApP calculated based on field players (excl. GK and floaters).",
+    "parametros": "Parameters",
+    "resultados": "Results",
+    "jogadoresCampo": "Field players (excl. GK/floaters)",
+    "areaPorJogador": "Desired area per player (m²)",
+    "proporcao": "Length / width ratio",
+    "goleiros": "Goalkeepers",
+    "coringas": "Jokers",
+    "sobreApP": "About ApP:",
+    "sobreApPDesc": "Area per Player is calculated by dividing total area only by field players. Goalkeepers and floaters are excluded because they occupy functionally distinct spaces during play.",
+    "participantesTotais": "Total participants",
+    "areaTotal": "Total area",
+    "comprimento": "Length",
+    "largura": "Width",
+    "appReal": "Actual ApP (field pl.)",
+    "classificacao": "Classification",
+    "cargaSetup": "Current setup load",
+    "valoresSugeridos": "Suggested values for {preset}",
+    "aplicarSugestao": "Apply {classif} suggestion",
+    "formatoReferencia": "Reference format: {label}",
+    "intensidadeGrupo": "Intensity ({grupo}): {intensidade}",
+    "grupoRefMedia": "Group B — avg. reference",
+    "semCorrespondencia": "No strong match in the table — using generic model",
+    "grupoNaoSelecionado": "No group selected — showing average reference (Group B)",
+    "fcEsperada": "Expected HR: {fc} HRmax",
+    "classificacaoApP": "Classification based on absolute ApP ({app} m²) — select SSG/MSG/LSG for target-relative analysis",
+    "classificacaoRelativa": "Based on {classif} • Target ApP: {alvo} m², current: {atual} m² • Target players: {jogAlvo}, current: {jogAtual}"
+  },
+  "prescription": {
+    "title": "HIIT Prescription",
+    "series": "Sets",
+    "duracao": "Duration",
+    "pausa": "Rest",
+    "intensidade": "Intensity",
+    "viaTabela": "VIA TABLE",
+    "modeloGenerico": "GENERIC MODEL",
+    "modeloGenericoDesc": "Game classification defines the framework; group defines dose progression/regression.",
+    "intensidadeLabel": "INTENSITY {level}"
+  },
+  "classif": {
+    "ssg": "SSG — Small-Sided Game (2–4 per side)",
+    "msg": "MSG — Medium-Sided Game (5–7 per side)",
+    "lsg": "LSG — Large-Sided Game (8+ per side)",
+    "descSSG": "Higher interaction density, greater neuromuscular load and anaerobic contribution",
+    "descMSG": "Intermediate stimulus, may favour neuromuscular load or high-speed exposure",
+    "descLSG": "Greater high-speed running exposure and longer displacements, higher aerobic contribution"
+  },
+  "load": {
+    "semEstimulo": "No stimulus",
+    "descSemEstimulo": "Well below target — insufficient stimulus for adaptation",
+    "leve": "Light",
+    "descLeve": "Below target — stimulus present but low",
+    "bom": "Good",
+    "descBom": "Range consistent with the game-type objective",
+    "dificil": "Hard",
+    "descDificil": "Above target — high load",
+    "pesado": "Heavy",
+    "descPesado": "Clearly demanding for the context",
+    "extremo": "Extreme",
+    "descExtremo": "Well above the recommended envelope"
+  },
+  "manipulation": {
+    "title": "MANIPULATION VARIABLES",
+    "subtitle": "Physiological effects of small-sided game manipulation variables",
+    "variavel": "Variable",
+    "manipulacao": "Manipulation",
+    "fcIntens": "HR / Intensity",
+    "distancia": "Distance",
+    "altaVel": "High Speed",
+    "ref": "Ref."
+  },
+  "methodology": {
+    "title": "Methodological note:",
+    "text": "Area per Player (ApP = m² / number of field players) is calculated based on outfield players only, excluding goalkeepers and floaters, as they occupy functionally distinct spaces. Total participants should be considered separately for field logistics."
+  },
+  "pwa": {
+    "novaVersao": "New version available.",
+    "atualizar": "Update",
+    "instalar": "Install",
+    "instalarMsg": "Install the app for offline access.",
+    "depois": "Later"
+  },
+  "refTable": {
+    "title": "REFERENCE: ApP (AREA PER PLAYER) TO REPLICATE MATCH DEMANDS",
+    "variavel": "Variable",
+    "appSemGK": "ApP WITHOUT GK (m²)",
+    "appComGK": "ApP WITH GK (m²)",
+    "formatoAdequado": "Suitable format",
+    "fontes": "Sources: Casamichana, Bradley & Castellano (PLOS ONE, 2020); Clemente et al. (2023); Rodríguez-Fernández et al. (2024)"
+  },
+  "refTableData": [
+    { "variavel": "Total distance (TD)", "appSem": "115 ± 35", "appCom": "187 ± 53", "formato": "MSG/LSG" },
+    { "variavel": "High-intensity running (HIR >16 km·h⁻¹)", "appSem": "166 ± 39", "appCom": "262 ± 72", "formato": "LSG" },
+    { "variavel": "Sprint (> 25 km·h⁻¹)", "appSem": "295 ± 99", "appCom": "316 ± 75", "formato": "LSG" },
+    { "variavel": "Very high speed running VHSR (>21 km·h⁻¹)", "appSem": "~197", "appCom": "~220", "formato": "LSG (≥ 200 m²)" },
+    { "variavel": "Accelerations/Decelerations", "appSem": "~80–100", "appCom": "~100–120", "formato": "SSG/MSG" },
+    { "variavel": "Metabolic power", "appSem": "94 ± 40", "appCom": "177 ± 42", "formato": "MSG/LSG" },
+    { "variavel": "> 90% HRmax (Zone 3)", "appSem": "30–80", "appCom": "—", "formato": "SSG" }
+  ],
+  "divergence": {
+    "divergente": "Divergent",
+    "pendente": "Pending",
+    "statusTooltip": "Status: {label} — verify against spreadsheet"
+  },
+  "footer": {
+    "text": "Small-Sided Games Prescription by V{sub}30-15{/sub}IFT · Evidence-based"
+  },
+  "objetivoFisiologico": {
+    "potencia": "Aerobic power / Accelerations (ApP < 60 m²)",
+    "resistencia": "Aerobic endurance / HIR (ApP 60–120 m²)",
+    "sprint": "Sprint / VHSR (ApP > 120 m²)"
+  }
+}

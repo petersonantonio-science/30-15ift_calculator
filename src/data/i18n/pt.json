@@ -1,0 +1,180 @@
+{
+  "app": {
+    "title": "JOGOS REDUZIDOS",
+    "subtitle": "Prescrição baseada no V{sub}30-15{/sub}IFT"
+  },
+  "tabs": {
+    "prescricao": "Prescrição",
+    "calculadora": "Calculadora",
+    "variaveis": "Variáveis"
+  },
+  "groups": {
+    "title": "Legenda de participantes",
+    "jogCampo": "Jog. campo",
+    "jogCampoDesc": "jogadores de linha (base do cálculo de ApP)",
+    "gk": "GK",
+    "gkDesc": "goleiros (excluídos do ApP)",
+    "coringas": "Coringas",
+    "coringasDesc": "jogadores neutros (excluídos do ApP)",
+    "menorCapacidade": "Menor capacidade",
+    "capacidadeIntermediaria": "Capacidade intermediária",
+    "maiorCapacidade": "Maior capacidade"
+  },
+  "filters": {
+    "title": "Filtros",
+    "todos": "Todos",
+    "todas": "Todas",
+    "grupo": "Grupo:",
+    "intensidade": "Intensidade:",
+    "searchPlaceholder": "Buscar formato...",
+    "searchAriaLabel": "Buscar formato de jogo",
+    "tipoDeJogo": "Tipo de jogo"
+  },
+  "table": {
+    "formato": "Formato",
+    "jogCampo": "Jog. campo",
+    "jogCampoTooltip": "Jogadores de campo (sem GK e sem coringas)",
+    "area": "Área (m²)",
+    "app": "ApP",
+    "gk": "GK",
+    "coringa": "Coringa",
+    "objetivo": "Objetivo",
+    "grupoA": "Grupo A",
+    "grupoB": "Grupo B",
+    "grupoC": "Grupo C",
+    "fc": "%FC",
+    "noResults": "Nenhum formato encontrado com os filtros selecionados.",
+    "scrollHint": "← Role para o lado →",
+    "countOf": "{count} de {total} formatos · Clique na linha para detalhes",
+    "variavelChave": "Variável-chave",
+    "referencia": "Referência",
+    "id": "ID"
+  },
+  "intensity": {
+    "title": "Legenda de Intensidade",
+    "muitoAlta": "Muito alta",
+    "alta": "Alta",
+    "moderada": "Moderada",
+    "baixa": "Baixa",
+    "muitoBaixa": "Muito baixa",
+    "descMuitoAlta": "Supera demanda de jogo · SSG curtos · >90% FC máx",
+    "descAlta": "Próximo da demanda de jogo · SSG/MSG · 85–90% FC máx",
+    "descModerada": "Levemente abaixo · MSG · 80–86% FC máx",
+    "descBaixa": "Abaixo da demanda de jogo · MSG/LSG · 77–83% FC máx",
+    "descMuitoBaixa": "Bem abaixo · LSG · <80% FC máx"
+  },
+  "calculator": {
+    "title": "CALCULADORA DE CAMPO",
+    "subtitle": "Dimensões por formato e grupo. ApP calculada com base nos jogadores de campo (sem GK e sem coringas).",
+    "parametros": "Parâmetros",
+    "resultados": "Resultados",
+    "jogadoresCampo": "Jogadores de campo (sem GK/coringa)",
+    "areaPorJogador": "Área por jogador desejada (m²)",
+    "proporcao": "Proporção comprimento / largura",
+    "goleiros": "Goleiros",
+    "coringas": "Coringas",
+    "sobreApP": "Sobre a ApP:",
+    "sobreApPDesc": "a Área por Jogador é calculada dividindo a área total apenas pelos jogadores de campo. Goleiros e coringas são excluídos do cálculo porque ocupam espaços funcionalmente distintos no jogo.",
+    "participantesTotais": "Participantes totais",
+    "areaTotal": "Área total",
+    "comprimento": "Comprimento",
+    "largura": "Largura",
+    "appReal": "ApP real (jog. campo)",
+    "classificacao": "Classificação",
+    "cargaSetup": "Carga do setup atual",
+    "valoresSugeridos": "Valores sugeridos para {preset}",
+    "aplicarSugestao": "Aplicar sugestão {classif}",
+    "formatoReferencia": "Formato de referência: {label}",
+    "intensidadeGrupo": "Intensidade ({grupo}): {intensidade}",
+    "grupoRefMedia": "Grupo B — ref. média",
+    "semCorrespondencia": "Sem correspondência forte na tabela — usando modelo genérico",
+    "grupoNaoSelecionado": "Grupo não selecionado — exibindo referência média (Grupo B)",
+    "fcEsperada": "FC esperada: {fc} FCmáx",
+    "classificacaoApP": "Classificação baseada na ApP absoluta ({app} m²) — selecione SSG/MSG/LSG para análise relativa ao alvo",
+    "classificacaoRelativa": "Baseado em {classif} • ApP alvo: {alvo} m², atual: {atual} m² • Jogadores alvo: {jogAlvo}, atual: {jogAtual}"
+  },
+  "prescription": {
+    "title": "Prescrição HIIT",
+    "series": "Séries",
+    "duracao": "Duração",
+    "pausa": "Pausa",
+    "intensidade": "Intensidade",
+    "viaTabela": "VIA TABELA",
+    "modeloGenerico": "MODELO GENÉRICO",
+    "modeloGenericoDesc": "Classificação do jogo define a moldura; grupo define a progressão/regressão da dose.",
+    "intensidadeLabel": "INTENSIDADE {level}"
+  },
+  "classif": {
+    "ssg": "SSG — Jogo Reduzido (2–4 por lado)",
+    "msg": "MSG — Jogo Médio (5–7 por lado)",
+    "lsg": "LSG — Jogo Grande (8+ por lado)",
+    "descSSG": "Maior densidade de interação, maior carga neuromuscular e contribuição anaeróbica",
+    "descMSG": "Estímulo intermediário, podendo privilegiar carga neuromuscular ou exposição a velocidade",
+    "descLSG": "Maior exposição a velocidade e deslocamentos longos, com maior contribuição aeróbica"
+  },
+  "load": {
+    "semEstimulo": "Sem estímulo",
+    "descSemEstimulo": "Muito abaixo do alvo esperado — estímulo insuficiente para adaptação",
+    "leve": "Leve",
+    "descLeve": "Abaixo do alvo — estímulo presente, mas baixo",
+    "bom": "Bom",
+    "descBom": "Faixa coerente com o objetivo do tipo de jogo",
+    "dificil": "Difícil",
+    "descDificil": "Acima do alvo esperado — carga alta",
+    "pesado": "Pesado",
+    "descPesado": "Claramente exigente para o contexto",
+    "extremo": "Extremo",
+    "descExtremo": "Muito acima do envelope recomendado"
+  },
+  "manipulation": {
+    "title": "VARIÁVEIS DE MANIPULAÇÃO",
+    "subtitle": "Efeitos fisiológicos das variáveis de manipulação dos jogos reduzidos",
+    "variavel": "Variável",
+    "manipulacao": "Manipulação",
+    "fcIntens": "FC / Intens.",
+    "distancia": "Distância",
+    "altaVel": "Alta Vel.",
+    "ref": "Ref."
+  },
+  "methodology": {
+    "title": "Nota metodológica:",
+    "text": "a área por jogador (ApP = m² / nº de jogadores de campo) é calculada com base nos jogadores de linha, excluindo goleiros e coringas, pois estes ocupam espaços funcionalmente distintos. O total de participantes deve ser considerado separadamente para dimensionamento logístico do campo."
+  },
+  "pwa": {
+    "novaVersao": "Nova versão disponível.",
+    "atualizar": "Atualizar",
+    "instalar": "Instalar",
+    "instalarMsg": "Instale o app para acesso offline.",
+    "depois": "Depois"
+  },
+  "refTable": {
+    "title": "REFERÊNCIA: ApP (ÁREA POR JOGADOR) PARA REPLICAR DEMANDA DE PARTIDA",
+    "variavel": "Variável",
+    "appSemGK": "ApP SEM GK (m²)",
+    "appComGK": "ApP COM GK (m²)",
+    "formatoAdequado": "Formato adequado",
+    "fontes": "Fontes: Casamichana, Bradley & Castellano (PLOS ONE, 2020); Clemente et al. (2023); Rodríguez-Fernández et al. (2024)"
+  },
+  "refTableData": [
+    { "variavel": "Distância total (TD)", "appSem": "115 ± 35", "appCom": "187 ± 53", "formato": "MSG/LSG" },
+    { "variavel": "Corrida alta intensidade (HIR >16 km·h⁻¹)", "appSem": "166 ± 39", "appCom": "262 ± 72", "formato": "LSG" },
+    { "variavel": "Sprint (> 25 km·h⁻¹)", "appSem": "295 ± 99", "appCom": "316 ± 75", "formato": "LSG" },
+    { "variavel": "Vel. muito alta VHSR (>21 km·h⁻¹)", "appSem": "~197", "appCom": "~220", "formato": "LSG (≥ 200 m²)" },
+    { "variavel": "Acelerações/Desacelerações", "appSem": "~80–100", "appCom": "~100–120", "formato": "SSG/MSG" },
+    { "variavel": "Potência metabólica", "appSem": "94 ± 40", "appCom": "177 ± 42", "formato": "MSG/LSG" },
+    { "variavel": "> 90% FC máx (Zona 3)", "appSem": "30–80", "appCom": "—", "formato": "SSG" }
+  ],
+  "divergence": {
+    "divergente": "Divergente",
+    "pendente": "Pendente",
+    "statusTooltip": "Status: {label} — verificar contra planilha"
+  },
+  "footer": {
+    "text": "Prescrição de Jogos Reduzidos por V{sub}30-15{/sub}IFT · Baseado em evidências científicas"
+  },
+  "objetivoFisiologico": {
+    "potencia": "Potência aeróbia / Acelerações (ApP < 60 m²)",
+    "resistencia": "Resistência aeróbia / HIR (ApP 60–120 m²)",
+    "sprint": "Sprint / VHSR (ApP > 120 m²)"
+  }
+}

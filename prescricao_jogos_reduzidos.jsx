@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FilterProvider } from "./src/context/FilterContext";
+import { useLanguage } from "./src/context/LanguageContext";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    DADOS — fonte primária: Prescricao_JogosReduzidos_VIFT.xlsx
@@ -17,6 +18,17 @@ import FieldCalculator from "./src/components/FieldCalculator";
 import ManipulationView from "./src/components/ManipulationView";
 import MethodologyNotice from "./src/components/MethodologyNotice";
 import PwaPrompts from "./src/components/PwaPrompts";
+import LanguageSwitcher from "./src/components/LanguageSwitcher";
+
+/** Preserva "ApP" em contextos com textTransform:uppercase */
+const preserveApP = (str) => {
+  if (typeof str !== "string" || !str.includes("ApP")) return str;
+  return str.split("ApP").reduce((acc, part, i) => {
+    if (i > 0) acc.push(<span key={i} style={{ textTransform: "none" }}>ApP</span>);
+    acc.push(part);
+    return acc;
+  }, []);
+};
 
 /* ═══════════════════════════════════════════════════════════════════════════
    ESTILOS — centralizados (P2-2)
@@ -37,17 +49,6 @@ const S = {
   body: "'DM Sans', sans-serif",
 };
 
-/* ── Tabela de referência (mantida inline — poucas linhas, sem divergência) ── */
-const REF_TABLE = [
-  { variavel: "Distância total (TD)",                      appSem: "115 ± 35",  appCom: "187 ± 53",  formato: "MSG/LSG" },
-  { variavel: "Corrida alta intensidade (HIR >16 km·h⁻¹)", appSem: "166 ± 39",  appCom: "262 ± 72",  formato: "LSG" },
-  { variavel: "Sprint (> 25 km·h⁻¹)",                      appSem: "295 ± 99",  appCom: "316 ± 75",  formato: "LSG" },
-  { variavel: "Vel. muito alta VHSR (>21 km·h⁻¹)",         appSem: "~197",      appCom: "~220",      formato: "LSG (≥ 200 m²)" },
-  { variavel: "Acelerações/Desacelerações",                 appSem: "~80–100",   appCom: "~100–120",  formato: "SSG/MSG" },
-  { variavel: "Potência metabólica",                        appSem: "94 ± 40",   appCom: "177 ± 42",  formato: "MSG/LSG" },
-  { variavel: "> 90% FC máx (Zona 3)",                      appSem: "30–80",     appCom: "—",         formato: "SSG" },
-];
-
 /* ═══════════════════════════════════════════════════════════════════════════
    APP PRINCIPAL
    Componentes extraídos para src/components/ (P2-1).
@@ -55,12 +56,15 @@ const REF_TABLE = [
 
 export default function App() {
   const [tab, setTab] = useState("prescricao");
+  const { t } = useLanguage();
 
   const tabs = [
-    { id: "prescricao", label: "Prescrição", icon: "⚽" },
-    { id: "calculadora", label: "Calculadora", icon: "📐" },
-    { id: "variaveis", label: "Variáveis", icon: "🔬" },
+    { id: "prescricao", label: t("tabs.prescricao"), icon: "⚽" },
+    { id: "calculadora", label: t("tabs.calculadora"), icon: "📐" },
+    { id: "variaveis", label: t("tabs.variaveis"), icon: "🔬" },
   ];
+
+  const REF_TABLE = t("refTableData");
 
   return (
     <FilterProvider>
@@ -154,12 +158,17 @@ export default function App() {
             display: "flex", alignItems: "center", justifyContent: "center",
             fontSize: 16, fontWeight: 900, color: "#000", flexShrink: 0,
           }}>JR</div>
-          <div>
-            <h1 className="app-header-title" style={{ fontFamily: S.heading, fontSize: 20, color: S.textPrimary, margin: 0, letterSpacing: 1 }}>JOGOS REDUZIDOS</h1>
+          <div style={{ flex: 1 }}>
+            <h1 className="app-header-title" style={{ fontFamily: S.heading, fontSize: 20, color: S.textPrimary, margin: 0, letterSpacing: 1 }}>{t("app.title")}</h1>
             <p className="app-header-sub" style={{ fontSize: 10, color: S.textMuted, margin: 0, letterSpacing: 2, textTransform: "uppercase" }}>
-              Prescrição baseada no V<sub>30-15</sub>IFT
+              {t("app.subtitle").split("{sub}").map((part, i) => {
+                if (i === 0) return part;
+                const [sub, rest] = part.split("{/sub}");
+                return <span key={i}><sub>{sub}</sub>{rest}</span>;
+              })}
             </p>
           </div>
+          <LanguageSwitcher />
         </div>
       </header>
 
@@ -169,21 +178,21 @@ export default function App() {
         padding: "0 24px", position: "sticky", top: 0, zIndex: 100,
       }}>
         <div className="app-tabs-inner" style={{ maxWidth: 1200, margin: "0 auto", display: "flex" }}>
-          {tabs.map(t => (
+          {tabs.map(tb => (
             <button
-              key={t.id}
+              key={tb.id}
               role="tab"
-              aria-selected={tab === t.id}
-              aria-controls={`panel-${t.id}`}
-              onClick={() => setTab(t.id)}
+              aria-selected={tab === tb.id}
+              aria-controls={`panel-${tb.id}`}
+              onClick={() => setTab(tb.id)}
               style={{
                 background: "none", border: "none", cursor: "pointer", padding: "12px 18px",
                 fontSize: 13, fontWeight: 700, letterSpacing: .5, fontFamily: S.body,
-                color: tab === t.id ? S.textPrimary : S.textMuted,
-                borderBottom: tab === t.id ? `2px solid ${S.accent}` : "2px solid transparent",
+                color: tab === tb.id ? S.textPrimary : S.textMuted,
+                borderBottom: tab === tb.id ? `2px solid ${S.accent}` : "2px solid transparent",
                 transition: "all .2s", display: "flex", alignItems: "center", gap: 6,
               }}
-            ><span aria-hidden="true">{t.icon}</span> {t.label}</button>
+            ><span aria-hidden="true">{tb.icon}</span> {tb.label}</button>
           ))}
         </div>
       </nav>
@@ -202,32 +211,32 @@ export default function App() {
         {tab === "calculadora" && (
           <div role="tabpanel" id="panel-calculadora">
             <div className="calc-section" style={{ background: S.surface, borderRadius: 16, padding: "24px 28px", marginBottom: 20 }}>
-              <h2 style={{ fontFamily: S.heading, fontSize: 16, color: S.textPrimary, marginBottom: 2 }}>CALCULADORA DE CAMPO</h2>
+              <h2 style={{ fontFamily: S.heading, fontSize: 16, color: S.textPrimary, marginBottom: 2 }}>{t("calculator.title")}</h2>
               <p style={{ fontSize: 11, color: S.textMuted, marginBottom: 20 }}>
-                Dimensões por formato e grupo. ApP calculada com base nos jogadores de campo (sem GK e sem coringas).
+                {t("calculator.subtitle")}
               </p>
               <FieldCalculator />
             </div>
             <div className="ref-table-wrap" style={{ background: S.surface, borderRadius: 16, padding: "24px 28px" }}>
               <h3 style={{ fontFamily: S.heading, fontSize: 13, color: S.accent, marginBottom: 14, textTransform: "uppercase", letterSpacing: 1 }}>
-                REFERÊNCIA: <span style={{ textTransform: "none" }}>ApP</span> (ÁREA POR JOGADOR) PARA REPLICAR DEMANDA DE PARTIDA
+                {preserveApP(t("refTable.title"))}
               </h3>
               <div style={{ overflowX: "auto" }}>
                 <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
                   <thead>
                     <tr style={{ borderBottom: `2px solid ${S.border}` }}>
                       {[
-                        { key: "var", node: "Variável" },
-                        { key: "sem", node: <><span style={{ textTransform: "none" }}>ApP</span> SEM GK <span style={{ textTransform: "none" }}>(m²)</span></> },
-                        { key: "com", node: <><span style={{ textTransform: "none" }}>ApP</span> COM GK <span style={{ textTransform: "none" }}>(m²)</span></> },
-                        { key: "fmt", node: "Formato adequado" },
+                        { key: "var", node: t("refTable.variavel") },
+                        { key: "sem", node: preserveApP(t("refTable.appSemGK")) },
+                        { key: "com", node: preserveApP(t("refTable.appComGK")) },
+                        { key: "fmt", node: t("refTable.formatoAdequado") },
                       ].map(h => (
                         <th key={h.key} style={{ padding: "8px 12px", textAlign: "left", fontSize: 10, textTransform: "uppercase", letterSpacing: 1, color: S.textMuted, fontWeight: 700 }}>{h.node}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
-                    {REF_TABLE.map((r, i) => (
+                    {Array.isArray(REF_TABLE) && REF_TABLE.map((r, i) => (
                       <tr key={i} style={{ borderBottom: `1px solid ${S.border}` }}>
                         <td style={{ padding: "8px 12px", fontWeight: 600, color: S.textSecondary }}>{r.variavel}</td>
                         <td style={{ padding: "8px 12px", fontFamily: S.mono }}>{r.appSem}</td>
@@ -239,7 +248,7 @@ export default function App() {
                 </table>
               </div>
               <p style={{ fontSize: 9, color: S.textDim, marginTop: 10, fontStyle: "italic" }}>
-                Fontes: Casamichana, Bradley & Castellano (PLOS ONE, 2020); Clemente et al. (2023); Rodríguez-Fernández et al. (2024)
+                {t("refTable.fontes")}
               </p>
             </div>
           </div>
@@ -255,7 +264,11 @@ export default function App() {
 
       <footer style={{ borderTop: `1px solid ${S.border}`, padding: "14px 24px", textAlign: "center" }}>
         <p style={{ fontSize: 9, color: S.textDim, margin: 0 }}>
-          Prescrição de Jogos Reduzidos por V<sub>30-15</sub>IFT · Baseado em evidências científicas
+          {t("footer.text").split("{sub}").map((part, i) => {
+            if (i === 0) return part;
+            const [sub, rest] = part.split("{/sub}");
+            return <span key={i}><sub>{sub}</sub>{rest}</span>;
+          })}
         </p>
       </footer>
       <PwaPrompts />

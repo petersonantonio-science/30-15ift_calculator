@@ -4,18 +4,33 @@ import FORMATS_DATA from "../data/formats.json";
 import GROUPS_DATA from "../data/groups.json";
 import MethodologyNotice from "./MethodologyNotice";
 import { useFilterContext } from "../context/FilterContext";
+import { useLanguage } from "../context/LanguageContext";
+import { resolveField } from "../utils/resolveField";
 import Pill from "./Pill";
 
-const INTENSITY_LEVELS = [
-  { level: "Muito alta", color: "#e74c3c", textOnBg: "#fff", desc: "Supera demanda de jogo · SSG curtos · >90% FC máx" },
-  { level: "Alta",       color: "#e67e22", textOnBg: "#fff", desc: "Próximo da demanda de jogo · SSG/MSG · 85–90% FC máx" },
-  { level: "Moderada",   color: "#f1c40f", textOnBg: "#222", desc: "Levemente abaixo · MSG · 80–86% FC máx" },
-  { level: "Baixa",      color: "#3498db", textOnBg: "#fff", desc: "Abaixo da demanda de jogo · MSG/LSG · 77–83% FC máx" },
-  { level: "Muito baixa",color: "#95a5a6", textOnBg: "#fff", desc: "Bem abaixo · LSG · <80% FC máx" },
-];
+const INTENSITY_KEYS = ["muitoAlta", "alta", "moderada", "baixa", "muitoBaixa"];
+const INTENSITY_COLORS = {
+  muitoAlta: { color: "#e74c3c", textOnBg: "#fff" },
+  alta:      { color: "#e67e22", textOnBg: "#fff" },
+  moderada:  { color: "#f1c40f", textOnBg: "#222" },
+  baixa:     { color: "#3498db", textOnBg: "#fff" },
+  muitoBaixa:{ color: "#95a5a6", textOnBg: "#fff" },
+};
 
-const INTENSITY_MAP = Object.fromEntries(INTENSITY_LEVELS.map(i => [i.level, i]));
-INTENSITY_MAP["—"] = { level: "—", color: "#bdc3c7", textOnBg: "#666", desc: "" };
+// Map PT intensity labels to keys for data lookup
+const PT_LABEL_TO_KEY = {
+  "Muito alta": "muitoAlta",
+  "Alta": "alta",
+  "Moderada": "moderada",
+  "Baixa": "baixa",
+  "Muito baixa": "muitoBaixa",
+};
+
+function getIntensityKey(ptLabel) {
+  // Handle composite labels like "Alta / Muito alta"
+  if (ptLabel === "—" || !ptLabel) return null;
+  return PT_LABEL_TO_KEY[ptLabel] || null;
+}
 
 const GROUPS = GROUPS_DATA.map(g => ({
   id: g.group, label: g.label, sub: g.description,
@@ -27,21 +42,40 @@ const FORMATS = FORMATS_DATA.map(f => ({
   ...f, formato: f.label,
 }));
 
-function IntensityBadge({ level }) {
-  const info = INTENSITY_MAP[level] || INTENSITY_MAP["—"];
+function IntensityBadge({ level, ptLevel }) {
+  const { t } = useLanguage();
+  const key = getIntensityKey(ptLevel || level);
+  const colors = key ? INTENSITY_COLORS[key] : { color: "#bdc3c7", textOnBg: "#666" };
+  const desc = key ? t(`intensity.desc${key.charAt(0).toUpperCase() + key.slice(1)}`) : "";
+  // For composite labels, translate each part
+  const translatedLevel = translateIntensityLabel(level, t);
+
   return (
     <span
       role="img"
-      aria-label={`Intensidade: ${level}`}
-      title={info.desc}
+      aria-label={`${t("filters.intensidade")} ${translatedLevel}`}
+      title={desc}
       style={{
         display: "inline-block", padding: "3px 10px", borderRadius: 20,
         fontSize: 11, fontWeight: 700, letterSpacing: ".3px",
-        background: info.color, color: info.textOnBg, whiteSpace: "nowrap",
-        cursor: info.desc ? "help" : "default",
+        background: colors.color, color: colors.textOnBg, whiteSpace: "nowrap",
+        cursor: desc ? "help" : "default",
       }}
-    >{level}</span>
+    >{translatedLevel}</span>
   );
+}
+
+function translateIntensityLabel(ptLabel, t) {
+  if (ptLabel === "—" || !ptLabel) return ptLabel;
+  // Handle composite: "Alta / Muito alta"
+  if (ptLabel.includes(" / ")) {
+    return ptLabel.split(" / ").map(p => {
+      const k = PT_LABEL_TO_KEY[p.trim()];
+      return k ? t(`intensity.${k}`) : p;
+    }).join(" / ");
+  }
+  const k = PT_LABEL_TO_KEY[ptLabel];
+  return k ? t(`intensity.${k}`) : ptLabel;
 }
 
 function ClassifBadge({ classif }) {
@@ -54,14 +88,15 @@ function ClassifBadge({ classif }) {
 
 // P0-3: Badge para itens com divergência
 function DivergenceBadge({ status }) {
+  const { t } = useLanguage();
   if (!status || status === "aligned") return null;
   const cfg = {
-    divergent: { bg: "rgba(231,76,60,.15)", fg: "#e74c3c", label: "Divergente" },
-    pending: { bg: "rgba(243,156,18,.15)", fg: "#f39c12", label: "Pendente" },
+    divergent: { bg: "rgba(231,76,60,.15)", fg: "#e74c3c", label: t("divergence.divergente") },
+    pending: { bg: "rgba(243,156,18,.15)", fg: "#f39c12", label: t("divergence.pendente") },
   };
   const c = cfg[status] || cfg.pending;
   return (
-    <span title={`Status: ${c.label} — verificar contra planilha`} style={{
+    <span title={t("divergence.statusTooltip", { label: c.label })} style={{
       display: "inline-block", padding: "1px 6px", borderRadius: 4,
       fontSize: 8, fontWeight: 700, letterSpacing: .5,
       background: c.bg, color: c.fg, marginLeft: 6, verticalAlign: "middle",
@@ -87,7 +122,6 @@ function useHorizontalScroll() {
     setHasOverflow(overflow);
     setFadeLeft(el.scrollLeft > tol);
     setFadeRight(el.scrollLeft + el.clientWidth < el.scrollWidth - tol);
-    // sync aux inner width
     if (innerRef.current) {
       innerRef.current.style.width = el.scrollWidth + "px";
     }
@@ -124,9 +158,19 @@ function useHorizontalScroll() {
 
 export default function FormatsTable() {
   const { filterClassif, setFilterClassif, filterGrupo, setFilterGrupo, filterIntensity, setFilterIntensity } = useFilterContext();
+  const { t, lang } = useLanguage();
   const [searchFormat, setSearchFormat] = useState("");
   const [expandedRow, setExpandedRow] = useState(null);
   const hs = useHorizontalScroll();
+
+  const intensityLevels = INTENSITY_KEYS.map(k => ({
+    key: k,
+    level: t(`intensity.${k}`),
+    ptLevel: ["Muito alta", "Alta", "Moderada", "Baixa", "Muito baixa"][INTENSITY_KEYS.indexOf(k)],
+    color: INTENSITY_COLORS[k].color,
+    textOnBg: INTENSITY_COLORS[k].textOnBg,
+    desc: t(`intensity.desc${k.charAt(0).toUpperCase() + k.slice(1)}`),
+  }));
 
   const filtered = useMemo(() => {
     return FORMATS.filter(f => {
@@ -140,8 +184,9 @@ export default function FormatsTable() {
     });
   }, [filterClassif, filterGrupo, filterIntensity, searchFormat]);
 
-  // Recalculate overflow when filtered data changes
   useEffect(() => { requestAnimationFrame(hs.update); }, [filtered, hs.update]);
+
+  const groupDescKeys = { A: "menorCapacidade", B: "capacidadeIntermediaria", C: "maiorCapacidade" };
 
   const thStyle = {
     padding: "10px 8px", textAlign: "center", fontWeight: 700, fontSize: 10,
@@ -160,43 +205,43 @@ export default function FormatsTable() {
             <div style={{ position: "absolute", top: -20, right: -10, fontSize: 72, fontWeight: 900, opacity: 0.04, fontFamily: S.heading, color: g.color }}>{g.id}</div>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
               <span style={{ fontSize: 20, fontWeight: 900, fontFamily: S.heading, color: g.color }}>{g.id}</span>
-              <span style={{ fontSize: 12, fontWeight: 700, color: S.textPrimary }}>{g.sub}</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: S.textPrimary }}>{t(`groups.${groupDescKeys[g.id]}`)}</span>
             </div>
             <div style={{ fontFamily: S.mono, fontSize: 11, color: S.textMuted }}>V: {g.vMin}–{g.vMax} km·h⁻¹</div>
-            <div style={{ fontSize: 10, color: S.textDim, marginTop: 3 }}>{g.desc}</div>
+            <div style={{ fontSize: 10, color: S.textDim, marginTop: 3 }}>{resolveField(g.desc, lang)}</div>
           </div>
         ))}
       </div>
 
-      {/* P0-2: Legenda persistente — jogadores de campo vs GK vs coringas */}
+      {/* P0-2: Legenda persistente */}
       <div className="legend-participants" style={{
         background: S.surface, borderRadius: 10, padding: "10px 16px", marginBottom: 14,
         display: "flex", gap: 18, flexWrap: "wrap", alignItems: "center",
         borderLeft: `3px solid ${S.accent}`,
       }}>
-        <span style={{ fontSize: 10, fontWeight: 700, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1 }}>Legenda de participantes</span>
+        <span style={{ fontSize: 10, fontWeight: 700, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1 }}>{t("groups.title")}</span>
         <span style={{ fontSize: 11, color: S.textSecondary }}>
-          <strong style={{ color: S.accent }}>Jog. campo</strong> = jogadores de linha (base do cálculo de ApP)
+          <strong style={{ color: S.accent }}>{t("groups.jogCampo")}</strong> = {t("groups.jogCampoDesc")}
         </span>
         <span style={{ fontSize: 11, color: S.textSecondary }}>
-          <strong style={{ color: "#f39c12" }}>GK</strong> = goleiros (excluídos do ApP)
+          <strong style={{ color: "#f39c12" }}>{t("groups.gk")}</strong> = {t("groups.gkDesc")}
         </span>
         <span style={{ fontSize: 11, color: S.textSecondary }}>
-          <strong style={{ color: "#9b59b6" }}>Coringas</strong> = jogadores neutros (excluídos do ApP)
+          <strong style={{ color: "#9b59b6" }}>{t("groups.coringas")}</strong> = {t("groups.coringasDesc")}
         </span>
       </div>
 
       {/* Filters */}
       <div className="filter-bar" style={{ background: S.surface, borderRadius: 12, padding: "12px 16px", marginBottom: 14 }}>
-        <span style={{ fontSize: 11, fontWeight: 700, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1 }}>Filtros</span>
+        <span style={{ fontSize: 11, fontWeight: 700, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1 }}>{t("filters.title")}</span>
         <div style={{ display: "flex", gap: 4 }}>
           {["Todos", "SSG", "MSG", "LSG"].map(c => (
-            <Pill key={c} active={filterClassif === c} color={S.accent} darkText onClick={() => setFilterClassif(c)}>{c}</Pill>
+            <Pill key={c} active={filterClassif === c} color={S.accent} darkText onClick={() => setFilterClassif(c)}>{c === "Todos" ? t("filters.todos") : c}</Pill>
           ))}
         </div>
         <div style={{ width: 1, height: 18, background: S.border }} />
         <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
-          <span style={{ fontSize: 10, color: S.textMuted }}>Grupo:</span>
+          <span style={{ fontSize: 10, color: S.textMuted }}>{t("filters.grupo")}</span>
           {["Todos", "A", "B", "C"].map(g => (
             <Pill
               key={g}
@@ -204,17 +249,17 @@ export default function FormatsTable() {
               color={g === "Todos" ? S.accent : GROUPS.find(x => x.id === g)?.color}
               darkText={g === "Todos"}
               onClick={() => { setFilterGrupo(g); if (g === "Todos") setFilterIntensity("Todas"); }}
-            >{g}</Pill>
+            >{g === "Todos" ? t("filters.todos") : g}</Pill>
           ))}
         </div>
         {filterGrupo !== "Todos" && (
           <>
             <div style={{ width: 1, height: 18, background: S.border }} />
             <div style={{ display: "flex", gap: 3, alignItems: "center", flexWrap: "wrap" }}>
-              <span style={{ fontSize: 10, color: S.textMuted }}>Intensidade:</span>
-              <Pill small active={filterIntensity === "Todas"} color={S.accent} darkText onClick={() => setFilterIntensity("Todas")}>Todas</Pill>
-              {INTENSITY_LEVELS.map(i => (
-                <Pill key={i.level} small active={filterIntensity === i.level} color={i.color} darkText={i.level === "Moderada"} onClick={() => setFilterIntensity(i.level)}>{i.level}</Pill>
+              <span style={{ fontSize: 10, color: S.textMuted }}>{t("filters.intensidade")}</span>
+              <Pill small active={filterIntensity === "Todas"} color={S.accent} darkText onClick={() => setFilterIntensity("Todas")}>{t("filters.todas")}</Pill>
+              {intensityLevels.map(i => (
+                <Pill key={i.key} small active={filterIntensity === i.ptLevel} color={i.color} darkText={i.key === "moderada"} onClick={() => setFilterIntensity(i.ptLevel)}>{i.level}</Pill>
               ))}
             </div>
           </>
@@ -222,8 +267,8 @@ export default function FormatsTable() {
         <div style={{ flex: 1 }} />
         <input
           type="search"
-          placeholder="Buscar formato..."
-          aria-label="Buscar formato de jogo"
+          placeholder={t("filters.searchPlaceholder")}
+          aria-label={t("filters.searchAriaLabel")}
           value={searchFormat}
           onChange={e => setSearchFormat(e.target.value)}
           style={{
@@ -234,9 +279,8 @@ export default function FormatsTable() {
         />
       </div>
 
-      {/* Table — P0-1: coluna renomeada para "Jog. campo" */}
+      {/* Table */}
       <div style={{ position: "relative", borderRadius: 12, border: `1px solid ${S.border}` }}>
-        {/* Left fade */}
         {hs.fadeLeft && (
           <div style={{
             position: "absolute", left: 0, top: 0, bottom: 0, width: 32, zIndex: 3,
@@ -244,7 +288,6 @@ export default function FormatsTable() {
             pointerEvents: "none", borderRadius: "12px 0 0 12px",
           }} />
         )}
-        {/* Right fade */}
         {hs.fadeRight && (
           <div style={{
             position: "absolute", right: 0, top: 0, bottom: 0, width: 32, zIndex: 3,
@@ -262,14 +305,14 @@ export default function FormatsTable() {
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }} role="grid">
             <thead>
               <tr style={{ background: S.surface }}>
-                {["", "Formato", "Jog. campo", "Área (m²)", "ApP", "GK", "Coringa", "Objetivo", "Grupo A", "Grupo B", "Grupo C", "%FC"].map((h, i) => (
-                  <th key={i} style={thStyle} title={h === "Jog. campo" ? "Jogadores de campo (sem GK e sem coringas)" : undefined}>{h === "ApP" ? <span style={{ textTransform: "none" }}>ApP</span> : h}</th>
+                {["", t("table.formato"), t("table.jogCampo"), t("table.area"), t("table.app"), t("table.gk"), t("table.coringa"), t("table.objetivo"), t("table.grupoA"), t("table.grupoB"), t("table.grupoC"), t("table.fc")].map((h, i) => (
+                  <th key={i} style={thStyle} title={i === 2 ? t("table.jogCampoTooltip") : undefined}>{h === t("table.app") ? <span style={{ textTransform: "none" }}>ApP</span> : h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {filtered.length === 0 && (
-                <tr><td colSpan={12} style={{ padding: 24, textAlign: "center", color: S.textMuted }}>Nenhum formato encontrado com os filtros selecionados.</td></tr>
+                <tr><td colSpan={12} style={{ padding: 24, textAlign: "center", color: S.textMuted }}>{t("table.noResults")}</td></tr>
               )}
               {filtered.map((f, idx) => {
                 const isExp = expandedRow === idx;
@@ -298,13 +341,13 @@ export default function FormatsTable() {
                     <td style={{ ...tdStyle, fontFamily: S.mono, fontSize: 11 }}>{f.areaTotal}</td>
                     <td style={{ ...tdStyle, fontFamily: S.mono, fontSize: 11 }}>{f.app}</td>
                     <td style={{ ...tdStyle, fontSize: 11 }}>{f.gk === "Sim" ? "\u2713" : "\u2014"}</td>
-                    <td style={{ ...tdStyle, fontSize: 10, color: f.coringa !== "Não" ? S.accent : S.textMuted, whiteSpace: "nowrap" }}>
-                      {f.coringa}
+                    <td style={{ ...tdStyle, fontSize: 10, color: resolveField(f.coringa, "pt") !== "Não" ? S.accent : S.textMuted, whiteSpace: "nowrap" }}>
+                      {resolveField(f.coringa, lang)}
                     </td>
-                    <td style={{ ...tdStyle, maxWidth: 200, fontSize: 11, color: S.textMuted }}>{f.objetivo}</td>
-                    <td style={tdStyle}><IntensityBadge level={f.grupoA} /></td>
-                    <td style={tdStyle}><IntensityBadge level={f.grupoB} /></td>
-                    <td style={tdStyle}><IntensityBadge level={f.grupoC} /></td>
+                    <td style={{ ...tdStyle, maxWidth: 200, fontSize: 11, color: S.textMuted }}>{resolveField(f.objetivo, lang)}</td>
+                    <td style={tdStyle}><IntensityBadge level={f.grupoA} ptLevel={f.grupoA} /></td>
+                    <td style={tdStyle}><IntensityBadge level={f.grupoB} ptLevel={f.grupoB} /></td>
+                    <td style={tdStyle}><IntensityBadge level={f.grupoC} ptLevel={f.grupoC} /></td>
                     <td style={{ ...tdStyle, fontFamily: S.mono, fontSize: 11 }}>{f.fc}</td>
                   </tr>,
                   isExp && (
@@ -312,15 +355,15 @@ export default function FormatsTable() {
                       <td colSpan={12} style={{ padding: "14px 18px", background: "rgba(0,230,118,0.03)", borderBottom: `1px solid ${S.border}` }}>
                         <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
                           <div>
-                            <span style={{ fontSize: 10, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1 }}>Variável-chave</span>
-                            <div style={{ fontSize: 13, fontWeight: 700, color: S.accent, marginTop: 2 }}>{f.variavel}</div>
+                            <span style={{ fontSize: 10, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1 }}>{t("table.variavelChave")}</span>
+                            <div style={{ fontSize: 13, fontWeight: 700, color: S.accent, marginTop: 2 }}>{resolveField(f.variavel, lang)}</div>
                           </div>
                           <div>
-                            <span style={{ fontSize: 10, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1 }}>Referência</span>
+                            <span style={{ fontSize: 10, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1 }}>{t("table.referencia")}</span>
                             <div style={{ fontSize: 12, color: S.textSecondary, marginTop: 2, fontStyle: "italic" }}>{f.ref}</div>
                           </div>
                           <div>
-                            <span style={{ fontSize: 10, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1 }}>ID</span>
+                            <span style={{ fontSize: 10, color: S.textMuted, textTransform: "uppercase", letterSpacing: 1 }}>{t("table.id")}</span>
                             <div style={{ fontSize: 11, fontFamily: S.mono, color: S.textDim, marginTop: 2 }}>{f.id}</div>
                           </div>
                         </div>
@@ -333,7 +376,6 @@ export default function FormatsTable() {
           </table>
         </div>
 
-        {/* Auxiliary scrollbar — mobile only, inside the table card */}
         {hs.hasOverflow && (
           <div
             ref={hs.auxRef}
@@ -352,34 +394,32 @@ export default function FormatsTable() {
         )}
       </div>
 
-      {/* Scroll hint — mobile only, shown when table overflows */}
       {hs.hasOverflow && (
         <div className="scroll-hint-mobile" style={{
           marginTop: 6, fontSize: 10, color: S.textDim, textAlign: "center",
-          display: "none", /* shown via media query */
+          display: "none",
         }}>
-          ← Role para o lado →
+          {t("table.scrollHint")}
         </div>
       )}
 
       <div style={{ marginTop: 8, fontSize: 10, color: S.textDim }}>
-        {filtered.length} de {FORMATS.length} formatos · Clique na linha para detalhes
+        {t("table.countOf", { count: filtered.length, total: FORMATS.length })}
       </div>
 
       {/* Legenda de intensidade */}
       <div className="intensity-legend" style={{ marginTop: 20, background: S.surface, borderRadius: 12, padding: "14px 18px" }}>
-        <h3 style={{ fontFamily: S.heading, fontSize: 12, color: S.textMuted, marginBottom: 10, textTransform: "uppercase", letterSpacing: 1 }}>Legenda de Intensidade</h3>
+        <h3 style={{ fontFamily: S.heading, fontSize: 12, color: S.textMuted, marginBottom: 10, textTransform: "uppercase", letterSpacing: 1 }}>{t("intensity.title")}</h3>
         <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-          {INTENSITY_LEVELS.map(({ level, desc }) => (
-            <div key={level} className="legend-item" style={{ display: "flex", alignItems: "center", gap: 6 }}>
-              <IntensityBadge level={level} />
+          {intensityLevels.map(({ key, level, desc }) => (
+            <div key={key} className="legend-item" style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <IntensityBadge level={level} ptLevel={["Muito alta", "Alta", "Moderada", "Baixa", "Muito baixa"][INTENSITY_KEYS.indexOf(key)]} />
               <span style={{ fontSize: 10, color: S.textDim }}>{desc}</span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Nota metodológica */}
       <MethodologyNotice />
     </div>
   );

@@ -1,11 +1,31 @@
 [
   {
     "id": "MAN-01",
-    "variavel": "Tamanho do campo",
-    "efeito": "Aumentar área (ApP)",
-    "efeitoFC": "↑ FC (~2–4%)",
-    "efeitoDist": "↑ Dist. total (~15%)",
-    "efeitoVel": "↑↑ HIR e sprint",
+    "variavel": {
+      "pt": "Tamanho do campo",
+      "en": "Field size",
+      "es": "Tamaño del campo"
+    },
+    "efeito": {
+      "pt": "Aumentar área (ApP)",
+      "en": "Increase area (ApP)",
+      "es": "Aumentar área (ApP)"
+    },
+    "efeitoFC": {
+      "pt": "↑ FC (~2–4%)",
+      "en": "↑ HR (~2–4%)",
+      "es": "↑ FC (~2–4%)"
+    },
+    "efeitoDist": {
+      "pt": "↑ Dist. total (~15%)",
+      "en": "↑ Total dist. (~15%)",
+      "es": "↑ Dist. total (~15%)"
+    },
+    "efeitoVel": {
+      "pt": "↑↑ HIR e sprint",
+      "en": "↑↑ HIR and sprint",
+      "es": "↑↑ HIR y sprint"
+    },
     "referencia": "Casamichana & Castellano, 2010",
     "sourceStatus": "aligned",
     "spreadsheetValue": {
@@ -30,11 +50,31 @@
   },
   {
     "id": "MAN-02",
-    "variavel": "Tamanho do campo",
-    "efeito": "Reduzir área (ApP)",
-    "efeitoFC": "↓ FC (~2–4%)",
-    "efeitoDist": "↓ Dist. total",
-    "efeitoVel": "↑ Acelerações/desac.",
+    "variavel": {
+      "pt": "Tamanho do campo",
+      "en": "Field size",
+      "es": "Tamaño del campo"
+    },
+    "efeito": {
+      "pt": "Reduzir área (ApP)",
+      "en": "Decrease area (ApP)",
+      "es": "Reducir área (ApP)"
+    },
+    "efeitoFC": {
+      "pt": "↓ FC (~2–4%)",
+      "en": "↓ HR (~2–4%)",
+      "es": "↓ FC (~2–4%)"
+    },
+    "efeitoDist": {
+      "pt": "↓ Dist. total",
+      "en": "↓ Total dist.",
+      "es": "↓ Dist. total"
+    },
+    "efeitoVel": {
+      "pt": "↑ Acelerações/desac.",
+      "en": "↑ Accelerations/decel.",
+      "es": "↑ Aceleraciones/desac."
+    },
     "referencia": "Casamichana & Castellano, 2010",
     "sourceStatus": "aligned",
     "spreadsheetValue": {
@@ -59,11 +99,31 @@
   },
   {
     "id": "MAN-03",
-    "variavel": "Tamanho do campo",
-    "efeito": "Campo estreito (longo)",
-    "efeitoFC": "↑ Ações longitudinais",
-    "efeitoDist": "Variável",
-    "efeitoVel": "↑ Sprints lineares",
+    "variavel": {
+      "pt": "Tamanho do campo",
+      "en": "Field size",
+      "es": "Tamaño del campo"
+    },
+    "efeito": {
+      "pt": "Campo estreito (longo)",
+      "en": "Narrow field (long)",
+      "es": "Campo estrecho (largo)"
+    },
+    "efeitoFC": {
+      "pt": "↑ Ações longitudinais",
+      "en": "↑ Longitudinal actions",
+      "es": "↑ Acciones longitudinales"
+    },
+    "efeitoDist": {
+      "pt": "Variável",
+      "en": "Variable",
+      "es": "Variable"
+    },
+    "efeitoVel": {
+      "pt": "↑ Sprints lineares",
+      "en": "↑ Linear sprints",
+      "es": "↑ Sprints lineales"
+    },
     "referencia": "Casamichana et al., 2018",
     "sourceStatus": "aligned",
     "spreadsheetValue": {
@@ -88,11 +148,31 @@
   },
   {
     "id": "MAN-04",
-    "variavel": "Tamanho do campo",
-    "efeito": "Campo largo",
-    "efeitoFC": "↑ Ações laterais",
-    "efeitoDist": "↑ Dist. total",
-    "efeitoVel": "↑ Mudanças de direção",
+    "variavel": {
+      "pt": "Tamanho do campo",
+      "en": "Field size",
+      "es": "Tamaño del campo"
+    },
+    "efeito": {
+      "pt": "Campo largo",
+      "en": "Wide field",
+      "es": "Campo ancho"
+    },
+    "efeitoFC": {
+      "pt": "↑ Ações laterais",
+      "en": "↑ Lateral actions",
+      "es": "↑ Acciones laterales"
+    },
+    "efeitoDist": {
+      "pt": "↑ Dist. total",
+      "en": "↑ Total dist.",
+      "es": "↑ Dist. total"
+    },
+    "efeitoVel": {
+      "pt": "↑ Mudanças de direção",
+      "en": "↑ Changes of direction",
+      "es": "↑ Cambios de dirección"
+    },
     "referencia": "Casamichana et al., 2018",
     "sourceStatus": "aligned",
     "spreadsheetValue": {
@@ -117,11 +197,31 @@
   },
   {
     "id": "MAN-05",
-    "variavel": "Nº de jogadores",
-    "efeito": "Reduzir (ex.: 4v4→2v2)",
-    "efeitoFC": "↑ FC (~1–3%)",
-    "efeitoDist": "↑ Dist. por min",
-    "efeitoVel": "↑ Ações alta intens.",
+    "variavel": {
+      "pt": "Nº de jogadores",
+      "en": "Number of players",
+      "es": "Nº de jugadores"
+    },
+    "efeito": {
+      "pt": "Reduzir (ex.: 4v4→2v2)",
+      "en": "Reduce (e.g.: 4v4→2v2)",
+      "es": "Reducir (ej.: 4v4→2v2)"
+    },
+    "efeitoFC": {
+      "pt": "↑ FC (~1–3%)",
+      "en": "↑ HR (~1–3%)",
+      "es": "↑ FC (~1–3%)"
+    },
+    "efeitoDist": {
+      "pt": "↑ Dist. por min",
+      "en": "↑ Dist. per min",
+      "es": "↑ Dist. por min"
+    },
+    "efeitoVel": {
+      "pt": "↑ Ações alta intens.",
+      "en": "↑ High-intensity actions",
+      "es": "↑ Acciones alta intens."
+    },
     "referencia": "Hill-Haas et al., 2011",
     "sourceStatus": "aligned",
     "spreadsheetValue": {
@@ -146,11 +246,31 @@
   },
   {
     "id": "MAN-06",
-    "variavel": "Nº de jogadores",
-    "efeito": "Aumentar (ex.: 4v4→8v8)",
-    "efeitoFC": "↓ FC (~3–5%)",
-    "efeitoDist": "↓ Dist. por min",
-    "efeitoVel": "↑ Sprint (mais espaço)",
+    "variavel": {
+      "pt": "Nº de jogadores",
+      "en": "Number of players",
+      "es": "Nº de jugadores"
+    },
+    "efeito": {
+      "pt": "Aumentar (ex.: 4v4→8v8)",
+      "en": "Increase (e.g.: 4v4→8v8)",
+      "es": "Aumentar (ej.: 4v4→8v8)"
+    },
+    "efeitoFC": {
+      "pt": "↓ FC (~3–5%)",
+      "en": "↓ HR (~3–5%)",
+      "es": "↓ FC (~3–5%)"
+    },
+    "efeitoDist": {
+      "pt": "↓ Dist. por min",
+      "en": "↓ Dist. per min",
+      "es": "↓ Dist. por min"
+    },
+    "efeitoVel": {
+      "pt": "↑ Sprint (mais espaço)",
+      "en": "↑ Sprint (more space)",
+      "es": "↑ Sprint (más espacio)"
+    },
     "referencia": "Clemente et al., 2023",
     "sourceStatus": "aligned",
     "spreadsheetValue": {
@@ -175,11 +295,31 @@
   },
   {
     "id": "MAN-07",
-    "variavel": "Goleiro",
-    "efeito": "Incluir GK",
-    "efeitoFC": "↑ FC (apesar de menos espaço útil)",
-    "efeitoDist": "↑ Dist. total (+60%)",
-    "efeitoVel": "↑ HIR (mais transições)",
+    "variavel": {
+      "pt": "Goleiro",
+      "en": "Goalkeeper",
+      "es": "Portero"
+    },
+    "efeito": {
+      "pt": "Incluir GK",
+      "en": "Include GK",
+      "es": "Incluir POR"
+    },
+    "efeitoFC": {
+      "pt": "↑ FC (apesar de menos espaço útil)",
+      "en": "↑ HR (despite less usable space)",
+      "es": "↑ FC (a pesar de menos espacio útil)"
+    },
+    "efeitoDist": {
+      "pt": "↑ Dist. total (+60%)",
+      "en": "↑ Total dist. (+60%)",
+      "es": "↑ Dist. total (+60%)"
+    },
+    "efeitoVel": {
+      "pt": "↑ HIR (mais transições)",
+      "en": "↑ HIR (more transitions)",
+      "es": "↑ HIR (más transiciones)"
+    },
     "referencia": "Casamichana et al., 2020",
     "sourceStatus": "aligned",
     "spreadsheetValue": {
@@ -204,11 +344,31 @@
   },
   {
     "id": "MAN-08",
-    "variavel": "Goleiro",
-    "efeito": "Excluir GK (posse)",
-    "efeitoFC": "↑↑ FC",
-    "efeitoDist": "↑↑ Dist./min",
-    "efeitoVel": "↑ Acelerações",
+    "variavel": {
+      "pt": "Goleiro",
+      "en": "Goalkeeper",
+      "es": "Portero"
+    },
+    "efeito": {
+      "pt": "Excluir GK (posse)",
+      "en": "Exclude GK (possession)",
+      "es": "Excluir POR (posesión)"
+    },
+    "efeitoFC": {
+      "pt": "↑↑ FC",
+      "en": "↑↑ HR",
+      "es": "↑↑ FC"
+    },
+    "efeitoDist": {
+      "pt": "↑↑ Dist./min",
+      "en": "↑↑ Dist./min",
+      "es": "↑↑ Dist./min"
+    },
+    "efeitoVel": {
+      "pt": "↑ Acelerações",
+      "en": "↑ Accelerations",
+      "es": "↑ Aceleraciones"
+    },
     "referencia": "Santos et al., 2024",
     "sourceStatus": "aligned",
     "spreadsheetValue": {
@@ -233,11 +393,31 @@
   },
   {
     "id": "MAN-09",
-    "variavel": "Coringa — interno",
-    "efeito": "Coringa dentro do campo",
-    "efeitoFC": "↑ FC jogadores regulares",
-    "efeitoDist": "↑ Dist. total",
-    "efeitoVel": "↑ HIR jog. regulares",
+    "variavel": {
+      "pt": "Coringa — interno",
+      "en": "Joker — inside",
+      "es": "Comodín — interno"
+    },
+    "efeito": {
+      "pt": "Coringa dentro do campo",
+      "en": "Joker inside the field",
+      "es": "Comodín dentro del campo"
+    },
+    "efeitoFC": {
+      "pt": "↑ FC jogadores regulares",
+      "en": "↑ HR regular players",
+      "es": "↑ FC jugadores regulares"
+    },
+    "efeitoDist": {
+      "pt": "↑ Dist. total",
+      "en": "↑ Total dist.",
+      "es": "↑ Dist. total"
+    },
+    "efeitoVel": {
+      "pt": "↑ HIR jog. regulares",
+      "en": "↑ HIR regular players",
+      "es": "↑ HIR jug. regulares"
+    },
     "referencia": "Rodríguez-Fernández et al., 2024",
     "sourceStatus": "aligned",
     "spreadsheetValue": {
@@ -262,11 +442,31 @@
   },
   {
     "id": "MAN-10",
-    "variavel": "Coringa — externo",
-    "efeito": "Coringa fora do campo",
-    "efeitoFC": "↓ FC jog. regulares",
-    "efeitoDist": "↓ Dist. total",
-    "efeitoVel": "Sem diferença em HIR",
+    "variavel": {
+      "pt": "Coringa — externo",
+      "en": "Joker — outside",
+      "es": "Comodín — externo"
+    },
+    "efeito": {
+      "pt": "Coringa fora do campo",
+      "en": "Joker outside the field",
+      "es": "Comodín fuera del campo"
+    },
+    "efeitoFC": {
+      "pt": "↓ FC jog. regulares",
+      "en": "↓ HR regular players",
+      "es": "↓ FC jug. regulares"
+    },
+    "efeitoDist": {
+      "pt": "↓ Dist. total",
+      "en": "↓ Total dist.",
+      "es": "↓ Dist. total"
+    },
+    "efeitoVel": {
+      "pt": "Sem diferença em HIR",
+      "en": "No difference in HIR",
+      "es": "Sin diferencia en HIR"
+    },
     "referencia": "Rodríguez-Fernández et al., 2024",
     "sourceStatus": "aligned",
     "spreadsheetValue": {
@@ -291,11 +491,31 @@
   },
   {
     "id": "MAN-11",
-    "variavel": "Coringa vs. sup. fixa",
-    "efeito": "Rotativo vs. fixo",
-    "efeitoFC": "↑ RPE (rotativo vs. fixo)",
-    "efeitoDist": "↑ Dist. total (rotativo)",
-    "efeitoVel": "Sem dif. em HIR",
+    "variavel": {
+      "pt": "Coringa vs. superioridade numérica fixa",
+      "en": "Joker vs. fixed numerical overload",
+      "es": "Comodín vs. superioridad numérica fija"
+    },
+    "efeito": {
+      "pt": "Rotativo vs. fixo",
+      "en": "Rotating vs. fixed",
+      "es": "Rotativo vs. fijo"
+    },
+    "efeitoFC": {
+      "pt": "↑ RPE (rotativo vs. fixo)",
+      "en": "↑ RPE (rotating vs. fixed)",
+      "es": "↑ RPE (rotativo vs. fijo)"
+    },
+    "efeitoDist": {
+      "pt": "↑ Dist. total (rotativo)",
+      "en": "↑ Total dist. (rotating)",
+      "es": "↑ Dist. total (rotativo)"
+    },
+    "efeitoVel": {
+      "pt": "Sem dif. em HIR",
+      "en": "No diff. in HIR",
+      "es": "Sin dif. en HIR"
+    },
     "referencia": "Hill-Haas et al., 2010",
     "sourceStatus": "divergent",
     "spreadsheetValue": {
@@ -320,11 +540,31 @@
   },
   {
     "id": "MAN-12",
-    "variavel": "Toque limitado",
-    "efeito": "1 ou 2 toques",
-    "efeitoFC": "↑ FC (~1–2%)",
-    "efeitoDist": "Sem diferença signif.",
-    "efeitoVel": "↑ Intensidade tática",
+    "variavel": {
+      "pt": "Toque limitado",
+      "en": "Touch restriction",
+      "es": "Toque limitado"
+    },
+    "efeito": {
+      "pt": "1 ou 2 toques",
+      "en": "1 or 2 touches",
+      "es": "1 o 2 toques"
+    },
+    "efeitoFC": {
+      "pt": "↑ FC (~1–2%)",
+      "en": "↑ HR (~1–2%)",
+      "es": "↑ FC (~1–2%)"
+    },
+    "efeitoDist": {
+      "pt": "Sem diferença signif.",
+      "en": "No significant difference",
+      "es": "Sin diferencia signif."
+    },
+    "efeitoVel": {
+      "pt": "↑ Intensidade tática",
+      "en": "↑ Tactical intensity",
+      "es": "↑ Intensidad táctica"
+    },
     "referencia": "Clemente et al., 2014",
     "sourceStatus": "aligned",
     "spreadsheetValue": {
@@ -349,11 +589,31 @@
   },
   {
     "id": "MAN-13",
-    "variavel": "Incentivo verbal",
-    "efeito": "Encorajamento do treinador",
-    "efeitoFC": "↑ FC (~2–3%)",
-    "efeitoDist": "↑ Dist. (~5%)",
-    "efeitoVel": "↑ Ações intensas",
+    "variavel": {
+      "pt": "Incentivo verbal",
+      "en": "Verbal encouragement",
+      "es": "Incentivo verbal"
+    },
+    "efeito": {
+      "pt": "Encorajamento do treinador",
+      "en": "Coach encouragement",
+      "es": "Estímulo del entrenador"
+    },
+    "efeitoFC": {
+      "pt": "↑ FC (~2–3%)",
+      "en": "↑ HR (~2–3%)",
+      "es": "↑ FC (~2–3%)"
+    },
+    "efeitoDist": {
+      "pt": "↑ Dist. (~5%)",
+      "en": "↑ Dist. (~5%)",
+      "es": "↑ Dist. (~5%)"
+    },
+    "efeitoVel": {
+      "pt": "↑ Ações intensas",
+      "en": "↑ Intense actions",
+      "es": "↑ Acciones intensas"
+    },
     "referencia": "Hill-Haas et al., 2011",
     "sourceStatus": "aligned",
     "spreadsheetValue": {
@@ -378,11 +638,31 @@
   },
   {
     "id": "MAN-14",
-    "variavel": "Desequilíbrio numérico",
-    "efeito": "Ex.: 4v6 (equipe menor)",
-    "efeitoFC": "↑ FC equipe menor",
-    "efeitoDist": "↑ Dist. equipe menor",
-    "efeitoVel": "↑ HIR equipe menor",
+    "variavel": {
+      "pt": "Desequilíbrio numérico",
+      "en": "Numerical imbalance",
+      "es": "Desequilibrio numérico"
+    },
+    "efeito": {
+      "pt": "Ex.: 4v6 (equipe menor)",
+      "en": "E.g.: 4v6 (smaller team)",
+      "es": "Ej.: 4v6 (equipo menor)"
+    },
+    "efeitoFC": {
+      "pt": "↑ FC equipe menor",
+      "en": "↑ HR smaller team",
+      "es": "↑ FC equipo menor"
+    },
+    "efeitoDist": {
+      "pt": "↑ Dist. equipe menor",
+      "en": "↑ Dist. smaller team",
+      "es": "↑ Dist. equipo menor"
+    },
+    "efeitoVel": {
+      "pt": "↑ HIR equipe menor",
+      "en": "↑ HIR smaller team",
+      "es": "↑ HIR equipo menor"
+    },
     "referencia": "Guard et al., 2022",
     "sourceStatus": "aligned",
     "spreadsheetValue": {
@@ -407,11 +687,31 @@
   },
   {
     "id": "MAN-15",
-    "variavel": "Pressing obrigatório",
-    "efeito": "Alta pressão defensiva",
-    "efeitoFC": "↑ FC (~2–5%)",
-    "efeitoDist": "↑ Dist. (~8%)",
-    "efeitoVel": "↑ Sprints curtos",
+    "variavel": {
+      "pt": "Pressing obrigatório",
+      "en": "Mandatory pressing",
+      "es": "Pressing obligatorio"
+    },
+    "efeito": {
+      "pt": "Alta pressão defensiva",
+      "en": "High defensive press",
+      "es": "Alta presión defensiva"
+    },
+    "efeitoFC": {
+      "pt": "↑ FC (~2–5%)",
+      "en": "↑ HR (~2–5%)",
+      "es": "↑ FC (~2–5%)"
+    },
+    "efeitoDist": {
+      "pt": "↑ Dist. (~8%)",
+      "en": "↑ Dist. (~8%)",
+      "es": "↑ Dist. (~8%)"
+    },
+    "efeitoVel": {
+      "pt": "↑ Sprints curtos",
+      "en": "↑ Short sprints",
+      "es": "↑ Sprints cortos"
+    },
     "referencia": "Zhang et al., 2023",
     "sourceStatus": "aligned",
     "spreadsheetValue": {
