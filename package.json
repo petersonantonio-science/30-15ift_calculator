@@ -1,0 +1,21 @@
+{
+  "name": "jogos-reduzidos-vift",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Prescrição de Jogos Reduzidos baseada no V30-15 IFT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.3.5",
+    "vite-plugin-pwa": "^0.21.1"
+  }
+}

@@ -1,0 +1,31 @@
+node_modules/
+dist/
+*.local
+
+# Planilha-fonte (dados sensiveis / binario)
+Prescricao_JogosReduzidos_VIFT.xlsx
+
+# Relatorios de auditoria originais (consolidados em audit_summary.json)
+audit_report_final.json
+claude_code_auditoria_final_mini.json
+reconciliation_report.json
+final_content_resolution_report.json
+final_project_closure_report.json
+business_contract_remaining_gap_mini.json
+AUDIT_REPORT.md
+audit_summary.json
+
+# Relatorios de desenvolvimento/fix
+App_header_fix_report.json
+App_reference_section_case_fix_report.json
+calculator_filters_integration_step1_report.json
+calculator_layer1_table_driven_modulation_report.json
+calculator_layer2_5_intensity_modulation_report.json
+calculator_layer2_table_driven_prescription_report.json
+calculator_post_step2_repair_report.json
+calculator_prescriptive_table_group_modulation_report.json
+calculator_step2_headercode_and_hiit_prescription_report.json
+horizontal_scroll_footer_and_fade_fix_report.json
+mobile_responsiveness_fix_report.json
+pwa_implementation_report.json
+table_vertical_scroll_and_alignment_report.json

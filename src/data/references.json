@@ -1,0 +1,95 @@
+[
+  {
+    "id": "REF-01",
+    "citation": "Hill-Haas et al., 2010",
+    "origin": "formats,manipulation",
+    "sourceStatus": "aligned",
+    "notes": "Presente na planilha como [1]. Verificado 2026-03-25."
+  },
+  {
+    "id": "REF-02",
+    "citation": "Hill-Haas et al., 2011",
+    "origin": "formats,manipulation",
+    "sourceStatus": "aligned",
+    "notes": "Presente na planilha como [2]. Verificado 2026-03-25."
+  },
+  {
+    "id": "REF-03",
+    "citation": "Casamichana & Castellano, 2010",
+    "origin": "formats,manipulation",
+    "sourceStatus": "aligned",
+    "notes": "Presente na planilha como [3]. Verificado 2026-03-25."
+  },
+  {
+    "id": "REF-04",
+    "citation": "Casamichana et al., 2018",
+    "origin": "manipulation",
+    "sourceStatus": "aligned",
+    "notes": "Presente na planilha como [11]. Verificado 2026-03-25."
+  },
+  {
+    "id": "REF-05",
+    "citation": "Casamichana et al., 2020",
+    "origin": "formats,manipulation,references",
+    "sourceStatus": "aligned",
+    "notes": "Registro canonico. Anteriormente duplicado como REF-06 (Casamichana, Bradley & Castellano, PLOS ONE, 2020). Unificado por DEC-08 em 2026-03-25. Presente na planilha como [5].",
+    "fullCitation": "Casamichana D, Bradley PS, Castellano J. Area per player in small-sided games to replicate the external load and estimated physiological match demands in elite soccer players. PLOS ONE. 2020;15(9):e0229194. doi:10.1371/journal.pone.0229194"
+  },
+  {
+    "id": "REF-07",
+    "citation": "Rodríguez-Fernández et al., 2024",
+    "origin": "formats,manipulation",
+    "sourceStatus": "aligned",
+    "notes": "Presente na planilha como [6]. Verificado 2026-03-25."
+  },
+  {
+    "id": "REF-08",
+    "citation": "Clemente et al., 2014",
+    "origin": "manipulation",
+    "sourceStatus": "aligned",
+    "notes": "Citada na aba de manipulacao (R15) com citacao completa, mas AUSENTE da bibliografia principal [1]-[11]. Verificado 2026-03-25."
+  },
+  {
+    "id": "REF-09",
+    "citation": "Clemente et al., 2023",
+    "origin": "formats,references",
+    "sourceStatus": "aligned",
+    "notes": "Presente na planilha como [7]. Verificado 2026-03-25."
+  },
+  {
+    "id": "REF-10",
+    "citation": "Kobi et al., 2026",
+    "origin": "formats",
+    "sourceStatus": "corrected_by_human",
+    "notes": "DEC-10: Referencia corrigida por decisao humana. Anterior: 'Dello Iacono et al., 2023' com DOI errado na planilha (10.1080/15438627.2014.951761 pertencia a Clemente 2014). Nova referencia fornecida pelo usuario em 2026-03-25.",
+    "fullCitation": "Kobi O, Ben-Ari A, Dello Iacono A, Silverman Y, Obolski U, & Halperin I. Prescribing playing intensity in small-sided games using rating of perceived effort among youth soccer players: a randomized crossover trial. Sci and Med in Football. 2026. 10(1), 73-79. doi.org/10.1080/24733938.2025.2471318"
+  },
+  {
+    "id": "REF-11",
+    "citation": "Di Salvo et al., 2007",
+    "origin": "formats",
+    "sourceStatus": "aligned",
+    "notes": "Presente na planilha como [10]. Verificado 2026-03-25."
+  },
+  {
+    "id": "REF-12",
+    "citation": "Santos et al., 2024",
+    "origin": "manipulation",
+    "sourceStatus": "aligned",
+    "notes": "Presente na planilha como [9]. Verificado 2026-03-25."
+  },
+  {
+    "id": "REF-13",
+    "citation": "Guard et al., 2022",
+    "origin": "manipulation",
+    "sourceStatus": "aligned",
+    "notes": "Citada na aba de manipulacao (R17) com citacao completa, mas AUSENTE da bibliografia principal [1]-[11]. Verificado 2026-03-25."
+  },
+  {
+    "id": "REF-14",
+    "citation": "Zhang et al., 2023",
+    "origin": "manipulation",
+    "sourceStatus": "aligned",
+    "notes": "Citada na aba de manipulacao (R18) com citacao completa, mas AUSENTE da bibliografia principal [1]-[11]. Verificado 2026-03-25."
+  }
+]

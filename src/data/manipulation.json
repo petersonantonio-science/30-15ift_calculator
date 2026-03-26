@@ -1,0 +1,437 @@
+[
+  {
+    "id": "MAN-01",
+    "variavel": "Tamanho do campo",
+    "efeito": "Aumentar área (ApP)",
+    "efeitoFC": "↑ FC (~2–4%)",
+    "efeitoDist": "↑ Dist. total (~15%)",
+    "efeitoVel": "↑↑ HIR e sprint",
+    "referencia": "Casamichana & Castellano, 2010",
+    "sourceStatus": "aligned",
+    "spreadsheetValue": {
+      "variavel": "Tamanho do campo",
+      "efeito": "Aumentar área (ApP)",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↑ FC (~2–4%)",
+      "efeitoDist": "↑ Dist. total (~15%)",
+      "efeitoVel": "↑↑ HIR e sprint",
+      "referencia": "Casamichana D, Castellano J. J Sports Sci. 2010;28(14):1615–23. doi:10.1080/02640414.2010.521168"
+    },
+    "appValue": {
+      "variavel": "Tamanho do campo",
+      "efeito": "Aumentar área (ApP)",
+      "efeitoFC": "↑ FC (~2–4%)",
+      "efeitoDist": "↑ Dist. total (~15%)",
+      "efeitoVel": "↑↑ HIR e sprint",
+      "referencia": "Casamichana & Castellano, 2010"
+    },
+    "notes": "FINAL-01: Todos os campos de conteudo alinhados. referenciaCompleta adicionada para exibicao com fallback dinamico. Formato abreviado exibido por padrao, completo disponivel via tooltip.",
+    "referenciaCompleta": "Casamichana D, Castellano J. J Sports Sci. 2010;28(14):1615–23. doi:10.1080/02640414.2010.521168"
+  },
+  {
+    "id": "MAN-02",
+    "variavel": "Tamanho do campo",
+    "efeito": "Reduzir área (ApP)",
+    "efeitoFC": "↓ FC (~2–4%)",
+    "efeitoDist": "↓ Dist. total",
+    "efeitoVel": "↑ Acelerações/desac.",
+    "referencia": "Casamichana & Castellano, 2010",
+    "sourceStatus": "aligned",
+    "spreadsheetValue": {
+      "variavel": "Tamanho do campo",
+      "efeito": "Reduzir área (ApP)",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↓ FC (~2–4%)",
+      "efeitoDist": "↓ Dist. total",
+      "efeitoVel": "↑ Acelerações/desac.",
+      "referencia": "Casamichana D, Castellano J. J Sports Sci. 2010;28(14):1615–23. doi:10.1080/02640414.2010.521168"
+    },
+    "appValue": {
+      "variavel": "Tamanho do campo",
+      "efeito": "Reduzir área (ApP)",
+      "efeitoFC": "↓ FC (~2–4%)",
+      "efeitoDist": "↓ Dist. total",
+      "efeitoVel": "↑ Acelerações/desac.",
+      "referencia": "Casamichana & Castellano, 2010"
+    },
+    "notes": "FINAL-01: Todos os campos de conteudo alinhados. referenciaCompleta adicionada para exibicao com fallback dinamico. Formato abreviado exibido por padrao, completo disponivel via tooltip.",
+    "referenciaCompleta": "Casamichana D, Castellano J. J Sports Sci. 2010;28(14):1615–23. doi:10.1080/02640414.2010.521168"
+  },
+  {
+    "id": "MAN-03",
+    "variavel": "Tamanho do campo",
+    "efeito": "Campo estreito (longo)",
+    "efeitoFC": "↑ Ações longitudinais",
+    "efeitoDist": "Variável",
+    "efeitoVel": "↑ Sprints lineares",
+    "referencia": "Casamichana et al., 2018",
+    "sourceStatus": "aligned",
+    "spreadsheetValue": {
+      "variavel": "Tamanho do campo",
+      "efeito": "Campo estreito (longo)",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↑ Ações longitudinais",
+      "efeitoDist": "Variável",
+      "efeitoVel": "↑ Sprints lineares",
+      "referencia": "Casamichana D, Bradley PS, Castellano J. J Hum Kinet. 2018;64:171–80. doi:10.1515/hukin-2017-0192"
+    },
+    "appValue": {
+      "variavel": "Tamanho do campo",
+      "efeito": "Campo estreito (longo)",
+      "efeitoFC": "↑ Ações longitudinais",
+      "efeitoDist": "Variável",
+      "efeitoVel": "↑ Sprints lineares",
+      "referencia": "Casamichana et al., 2018"
+    },
+    "notes": "FINAL-01: Todos os campos de conteudo alinhados. referenciaCompleta adicionada para exibicao com fallback dinamico. Formato abreviado exibido por padrao, completo disponivel via tooltip.",
+    "referenciaCompleta": "Casamichana D, Bradley PS, Castellano J. J Hum Kinet. 2018;64:171–80. doi:10.1515/hukin-2017-0192"
+  },
+  {
+    "id": "MAN-04",
+    "variavel": "Tamanho do campo",
+    "efeito": "Campo largo",
+    "efeitoFC": "↑ Ações laterais",
+    "efeitoDist": "↑ Dist. total",
+    "efeitoVel": "↑ Mudanças de direção",
+    "referencia": "Casamichana et al., 2018",
+    "sourceStatus": "aligned",
+    "spreadsheetValue": {
+      "variavel": "Tamanho do campo",
+      "efeito": "Campo largo",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↑ Ações laterais",
+      "efeitoDist": "↑ Dist. total",
+      "efeitoVel": "↑ Mudanças de direção",
+      "referencia": "Casamichana D, Bradley PS, Castellano J. J Hum Kinet. 2018;64:171–80. doi:10.1515/hukin-2017-0192"
+    },
+    "appValue": {
+      "variavel": "Tamanho do campo",
+      "efeito": "Campo largo",
+      "efeitoFC": "↑ Ações laterais",
+      "efeitoDist": "↑ Dist. total",
+      "efeitoVel": "↑ Mudanças de direção",
+      "referencia": "Casamichana et al., 2018"
+    },
+    "notes": "FINAL-01: Todos os campos de conteudo alinhados. referenciaCompleta adicionada para exibicao com fallback dinamico. Formato abreviado exibido por padrao, completo disponivel via tooltip.",
+    "referenciaCompleta": "Casamichana D, Bradley PS, Castellano J. J Hum Kinet. 2018;64:171–80. doi:10.1515/hukin-2017-0192"
+  },
+  {
+    "id": "MAN-05",
+    "variavel": "Nº de jogadores",
+    "efeito": "Reduzir (ex.: 4v4→2v2)",
+    "efeitoFC": "↑ FC (~1–3%)",
+    "efeitoDist": "↑ Dist. por min",
+    "efeitoVel": "↑ Ações alta intens.",
+    "referencia": "Hill-Haas et al., 2011",
+    "sourceStatus": "aligned",
+    "spreadsheetValue": {
+      "variavel": "Nº de jogadores",
+      "efeito": "Reduzir (ex.: 4v4→2v2)",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↑ FC (~1–3%)",
+      "efeitoDist": "↑ Dist. por min",
+      "efeitoVel": "↑ Ações alta intens.",
+      "referencia": "Hill-Haas SV et al. Sports Med. 2011;41(3):199–220. doi:10.2165/11539740-000000000-00000"
+    },
+    "appValue": {
+      "variavel": "Nº de jogadores",
+      "efeito": "Reduzir (ex.: 4v4→2v2)",
+      "efeitoFC": "↑ FC (~1–3%)",
+      "efeitoDist": "↑ Dist. por min",
+      "efeitoVel": "↑ Ações alta intens.",
+      "referencia": "Hill-Haas et al., 2011"
+    },
+    "notes": "FINAL-01: Todos os campos de conteudo alinhados. referenciaCompleta adicionada para exibicao com fallback dinamico. Formato abreviado exibido por padrao, completo disponivel via tooltip.",
+    "referenciaCompleta": "Hill-Haas SV et al. Sports Med. 2011;41(3):199–220. doi:10.2165/11539740-000000000-00000"
+  },
+  {
+    "id": "MAN-06",
+    "variavel": "Nº de jogadores",
+    "efeito": "Aumentar (ex.: 4v4→8v8)",
+    "efeitoFC": "↓ FC (~3–5%)",
+    "efeitoDist": "↓ Dist. por min",
+    "efeitoVel": "↑ Sprint (mais espaço)",
+    "referencia": "Clemente et al., 2023",
+    "sourceStatus": "aligned",
+    "spreadsheetValue": {
+      "variavel": "Nº de jogadores",
+      "efeito": "Aumentar (ex.: 4v4→8v8)",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↓ FC (~3–5%)",
+      "efeitoDist": "↓ Dist. por min",
+      "efeitoVel": "↑ Sprint (mais espaço)",
+      "referencia": "Clemente FM et al. Front Sports Act Living. 2023;5:1165242. doi:10.3389/fspor.2023.1165242"
+    },
+    "appValue": {
+      "variavel": "Nº de jogadores",
+      "efeito": "Aumentar (ex.: 4v4→8v8)",
+      "efeitoFC": "↓ FC (~3–5%)",
+      "efeitoDist": "↓ Dist. por min",
+      "efeitoVel": "↑ Sprint (mais espaço)",
+      "referencia": "Clemente et al., 2023"
+    },
+    "notes": "FINAL-01: Todos os campos de conteudo alinhados. referenciaCompleta adicionada para exibicao com fallback dinamico. Formato abreviado exibido por padrao, completo disponivel via tooltip.",
+    "referenciaCompleta": "Clemente FM et al. Front Sports Act Living. 2023;5:1165242. doi:10.3389/fspor.2023.1165242"
+  },
+  {
+    "id": "MAN-07",
+    "variavel": "Goleiro",
+    "efeito": "Incluir GK",
+    "efeitoFC": "↑ FC (apesar de menos espaço útil)",
+    "efeitoDist": "↑ Dist. total (+60%)",
+    "efeitoVel": "↑ HIR (mais transições)",
+    "referencia": "Casamichana et al., 2020",
+    "sourceStatus": "aligned",
+    "spreadsheetValue": {
+      "variavel": "Goleiro",
+      "efeito": "Incluir GK",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↑ FC (apesar de menos espaço útil)",
+      "efeitoDist": "↑ Dist. total (+60%)",
+      "efeitoVel": "↑ HIR (mais transições)",
+      "referencia": "Casamichana D, Bradley PS, Castellano J. PLOS ONE. 2020;15(9):e0229194. doi:10.1371/journal.pone.0229194"
+    },
+    "appValue": {
+      "variavel": "Goleiro",
+      "efeito": "Incluir GK",
+      "efeitoFC": "↑ FC (menos espaço útil)",
+      "efeitoDist": "↑ Dist. total (+60%)",
+      "efeitoVel": "↑ HIR (transições)",
+      "referencia": "Casamichana et al., 2020"
+    },
+    "notes": "FINAL-01: Todos os campos de conteudo alinhados. referenciaCompleta adicionada para exibicao com fallback dinamico. Formato abreviado exibido por padrao, completo disponivel via tooltip.",
+    "referenciaCompleta": "Casamichana D, Bradley PS, Castellano J. PLOS ONE. 2020;15(9):e0229194. doi:10.1371/journal.pone.0229194"
+  },
+  {
+    "id": "MAN-08",
+    "variavel": "Goleiro",
+    "efeito": "Excluir GK (posse)",
+    "efeitoFC": "↑↑ FC",
+    "efeitoDist": "↑↑ Dist./min",
+    "efeitoVel": "↑ Acelerações",
+    "referencia": "Santos et al., 2024",
+    "sourceStatus": "aligned",
+    "spreadsheetValue": {
+      "variavel": "Goleiro",
+      "efeito": "Excluir GK (posse)",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↑↑ FC",
+      "efeitoDist": "↑↑ Dist./min",
+      "efeitoVel": "↑ Acelerações",
+      "referencia": "Santos F et al. J Hum Kinet. 2024. doi:10.1177/17479541241231485"
+    },
+    "appValue": {
+      "variavel": "Goleiro",
+      "efeito": "Excluir GK (posse)",
+      "efeitoFC": "↑↑ FC",
+      "efeitoDist": "↑↑ Dist./min",
+      "efeitoVel": "↑ Acelerações",
+      "referencia": "Santos et al., 2024"
+    },
+    "notes": "FINAL-01: Todos os campos de conteudo alinhados. referenciaCompleta adicionada para exibicao com fallback dinamico. Formato abreviado exibido por padrao, completo disponivel via tooltip.",
+    "referenciaCompleta": "Santos F et al. J Hum Kinet. 2024. doi:10.1177/17479541241231485"
+  },
+  {
+    "id": "MAN-09",
+    "variavel": "Coringa — interno",
+    "efeito": "Coringa dentro do campo",
+    "efeitoFC": "↑ FC jogadores regulares",
+    "efeitoDist": "↑ Dist. total",
+    "efeitoVel": "↑ HIR jog. regulares",
+    "referencia": "Rodríguez-Fernández et al., 2024",
+    "sourceStatus": "aligned",
+    "spreadsheetValue": {
+      "variavel": "Coringa — interno",
+      "efeito": "Coringa dentro do campo",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↑ FC jogadores regulares",
+      "efeitoDist": "↑ Dist. total",
+      "efeitoVel": "↑ HIR jog. regulares",
+      "referencia": "Rodríguez-Fernández A et al. Orthop J Sports Med. 2024;12(5). doi:10.1177/19417381241257175"
+    },
+    "appValue": {
+      "variavel": "Coringa — interno",
+      "efeito": "Coringa dentro do campo",
+      "efeitoFC": "↑ FC jog. regulares",
+      "efeitoDist": "↑ Dist. total",
+      "efeitoVel": "↑ HIR jog. regulares",
+      "referencia": "Rodríguez-Fernández et al., 2024"
+    },
+    "notes": "FINAL-01: Todos os campos de conteudo alinhados. referenciaCompleta adicionada para exibicao com fallback dinamico. Formato abreviado exibido por padrao, completo disponivel via tooltip.",
+    "referenciaCompleta": "Rodríguez-Fernández A et al. Orthop J Sports Med. 2024;12(5). doi:10.1177/19417381241257175"
+  },
+  {
+    "id": "MAN-10",
+    "variavel": "Coringa — externo",
+    "efeito": "Coringa fora do campo",
+    "efeitoFC": "↓ FC jog. regulares",
+    "efeitoDist": "↓ Dist. total",
+    "efeitoVel": "Sem diferença em HIR",
+    "referencia": "Rodríguez-Fernández et al., 2024",
+    "sourceStatus": "aligned",
+    "spreadsheetValue": {
+      "variavel": "Coringa — externo",
+      "efeito": "Coringa fora do campo",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↓ FC jog. regulares",
+      "efeitoDist": "↓ Dist. total",
+      "efeitoVel": "Sem diferença em HIR",
+      "referencia": "Rodríguez-Fernández A et al. Orthop J Sports Med. 2024;12(5). doi:10.1177/19417381241257175"
+    },
+    "appValue": {
+      "variavel": "Coringa — externo",
+      "efeito": "Coringa fora do campo",
+      "efeitoFC": "↓ FC jog. regulares",
+      "efeitoDist": "↓ Dist. total",
+      "efeitoVel": "Sem diferença em HIR",
+      "referencia": "Rodríguez-Fernández et al., 2024"
+    },
+    "notes": "FINAL-01: Todos os campos de conteudo alinhados. referenciaCompleta adicionada para exibicao com fallback dinamico. Formato abreviado exibido por padrao, completo disponivel via tooltip.",
+    "referenciaCompleta": "Rodríguez-Fernández A et al. Orthop J Sports Med. 2024;12(5). doi:10.1177/19417381241257175"
+  },
+  {
+    "id": "MAN-11",
+    "variavel": "Coringa vs. sup. fixa",
+    "efeito": "Rotativo vs. fixo",
+    "efeitoFC": "↑ RPE (rotativo vs. fixo)",
+    "efeitoDist": "↑ Dist. total (rotativo)",
+    "efeitoVel": "Sem dif. em HIR",
+    "referencia": "Hill-Haas et al., 2010",
+    "sourceStatus": "divergent",
+    "spreadsheetValue": {
+      "variavel": "Coringa vs. sup. fixa",
+      "efeito": "Coringa rotativo vs. desequil. fixo",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↑ RPE (rotativo vs. fixo)",
+      "efeitoDist": "↑ Dist. total (rotativo)",
+      "efeitoVel": "Sem dif. em HIR",
+      "referencia": "Hill-Haas SV et al. J Strength Cond Res. 2010;24(8):2149–56. doi:10.1519/JSC.0b013e3181af5265"
+    },
+    "appValue": {
+      "variavel": "Coringa vs. sup. fixa",
+      "efeito": "Rotativo vs. fixo",
+      "efeitoFC": "↑ RPE (rotativo)",
+      "efeitoDist": "↑ Dist. total (rotativo)",
+      "efeitoVel": "Sem dif. em HIR",
+      "referencia": "Hill-Haas et al., 2010"
+    },
+    "notes": "DEC-01 (efeito mantido por decisao humana) e DEC-05 (efeitoFC corrigido) aplicadas. Divergencia restante: referencia (formato abreviado). Campo aplicacao removido (DEC-07). FINAL-01: referenciaCompleta adicionada. Divergencia de conteudo residual mantida (DEC-01 override).",
+    "referenciaCompleta": "Hill-Haas SV et al. J Strength Cond Res. 2010;24(8):2149–56. doi:10.1519/JSC.0b013e3181af5265"
+  },
+  {
+    "id": "MAN-12",
+    "variavel": "Toque limitado",
+    "efeito": "1 ou 2 toques",
+    "efeitoFC": "↑ FC (~1–2%)",
+    "efeitoDist": "Sem diferença signif.",
+    "efeitoVel": "↑ Intensidade tática",
+    "referencia": "Clemente et al., 2014",
+    "sourceStatus": "aligned",
+    "spreadsheetValue": {
+      "variavel": "Toque limitado",
+      "efeito": "1 ou 2 toques",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↑ FC (~1–2%)",
+      "efeitoDist": "Sem diferença signif.",
+      "efeitoVel": "↑ Intensidade tática",
+      "referencia": "Clemente FM et al. Res Sports Med. 2014;22(4):380–97. doi:10.1080/15438627.2014.951761"
+    },
+    "appValue": {
+      "variavel": "Toque limitado",
+      "efeito": "1 ou 2 toques",
+      "efeitoFC": "↑ FC (~1–2%)",
+      "efeitoDist": "Sem dif. signif.",
+      "efeitoVel": "↑ Intensidade tática",
+      "referencia": "Clemente et al., 2014"
+    },
+    "notes": "FINAL-01: Todos os campos de conteudo alinhados. referenciaCompleta adicionada para exibicao com fallback dinamico. Formato abreviado exibido por padrao, completo disponivel via tooltip.",
+    "referenciaCompleta": "Clemente FM et al. Res Sports Med. 2014;22(4):380–97. doi:10.1080/15438627.2014.951761"
+  },
+  {
+    "id": "MAN-13",
+    "variavel": "Incentivo verbal",
+    "efeito": "Encorajamento do treinador",
+    "efeitoFC": "↑ FC (~2–3%)",
+    "efeitoDist": "↑ Dist. (~5%)",
+    "efeitoVel": "↑ Ações intensas",
+    "referencia": "Hill-Haas et al., 2011",
+    "sourceStatus": "aligned",
+    "spreadsheetValue": {
+      "variavel": "Incentivo verbal",
+      "efeito": "Encorajamento do treinador",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↑ FC (~2–3%)",
+      "efeitoDist": "↑ Dist. (~5%)",
+      "efeitoVel": "↑ Ações intensas",
+      "referencia": "Hill-Haas SV et al. Sports Med. 2011;41(3):199–220. doi:10.2165/11539740-000000000-00000"
+    },
+    "appValue": {
+      "variavel": "Incentivo verbal",
+      "efeito": "Encorajamento do treinador",
+      "efeitoFC": "↑ FC (~2–3%)",
+      "efeitoDist": "↑ Dist. (~5%)",
+      "efeitoVel": "↑ Ações intensas",
+      "referencia": "Hill-Haas et al., 2011"
+    },
+    "notes": "FINAL-01: Todos os campos de conteudo alinhados. referenciaCompleta adicionada para exibicao com fallback dinamico. Formato abreviado exibido por padrao, completo disponivel via tooltip.",
+    "referenciaCompleta": "Hill-Haas SV et al. Sports Med. 2011;41(3):199–220. doi:10.2165/11539740-000000000-00000"
+  },
+  {
+    "id": "MAN-14",
+    "variavel": "Desequilíbrio numérico",
+    "efeito": "Ex.: 4v6 (equipe menor)",
+    "efeitoFC": "↑ FC equipe menor",
+    "efeitoDist": "↑ Dist. equipe menor",
+    "efeitoVel": "↑ HIR equipe menor",
+    "referencia": "Guard et al., 2022",
+    "sourceStatus": "aligned",
+    "spreadsheetValue": {
+      "variavel": "Desequilíbrio numérico",
+      "efeito": "Ex.: 4v6 (equipe menor)",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↑ FC equipe menor",
+      "efeitoDist": "↑ Dist. equipe menor",
+      "efeitoVel": "↑ HIR equipe menor",
+      "referencia": "Guard AN, McMillan K, MacFarlane NG. Sci Med Footb. 2022;6(2):221–7. doi:10.1080/24733938.2021.1939408"
+    },
+    "appValue": {
+      "variavel": "Desequilíbrio numérico",
+      "efeito": "Ex.: 4v6 (equipe menor)",
+      "efeitoFC": "↑ FC equipe menor",
+      "efeitoDist": "↑ Dist. equipe menor",
+      "efeitoVel": "↑ HIR equipe menor",
+      "referencia": "Guard et al., 2022"
+    },
+    "notes": "FINAL-01: Todos os campos de conteudo alinhados. referenciaCompleta adicionada para exibicao com fallback dinamico. Formato abreviado exibido por padrao, completo disponivel via tooltip.",
+    "referenciaCompleta": "Guard AN, McMillan K, MacFarlane NG. Sci Med Footb. 2022;6(2):221–7. doi:10.1080/24733938.2021.1939408"
+  },
+  {
+    "id": "MAN-15",
+    "variavel": "Pressing obrigatório",
+    "efeito": "Alta pressão defensiva",
+    "efeitoFC": "↑ FC (~2–5%)",
+    "efeitoDist": "↑ Dist. (~8%)",
+    "efeitoVel": "↑ Sprints curtos",
+    "referencia": "Zhang et al., 2023",
+    "sourceStatus": "aligned",
+    "spreadsheetValue": {
+      "variavel": "Pressing obrigatório",
+      "efeito": "Alta pressão defensiva",
+      "aplicacao": "NOT_IN_SOURCE",
+      "efeitoFC": "↑ FC (~2–5%)",
+      "efeitoDist": "↑ Dist. (~8%)",
+      "efeitoVel": "↑ Sprints curtos",
+      "referencia": "Zhang B et al. Front Physiol. 2023;14:1167624. doi:10.3389/fphys.2023.1167624"
+    },
+    "appValue": {
+      "variavel": "Pressing obrigatório",
+      "efeito": "Alta pressão defensiva",
+      "efeitoFC": "↑ FC (~2–5%)",
+      "efeitoDist": "↑ Dist. (~8%)",
+      "efeitoVel": "↑ Sprints curtos",
+      "referencia": "Zhang et al., 2023"
+    },
+    "notes": "FINAL-01: Todos os campos de conteudo alinhados. referenciaCompleta adicionada para exibicao com fallback dinamico. Formato abreviado exibido por padrao, completo disponivel via tooltip.",
+    "referenciaCompleta": "Zhang B et al. Front Physiol. 2023;14:1167624. doi:10.3389/fphys.2023.1167624"
+  }
+]

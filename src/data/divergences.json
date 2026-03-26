@@ -1,0 +1,200 @@
+{
+  "_meta": {
+    "description": "Catalogo rastreavel de divergencias entre a planilha (Prescricao_JogosReduzidos_VIFT.xlsx) e o app.",
+    "lastAudit": "2026-03-25",
+    "lastDecisionBatch": "2026-03-25 (DEC-01 a DEC-10)",
+    "auditMethod": "Leitura programatica da planilha via openpyxl + comparacao campo a campo",
+    "pendingHumanDecisions": 0,
+    "lastDecisionBatch_FINAL": "2026-03-25 (FINAL-01 a FINAL-03)"
+  },
+  "divergences": [
+    {
+      "id": "DIV-01",
+      "entityType": "format",
+      "entityId": "FMT-07",
+      "field": "coringa",
+      "spreadsheetValue": "Sim",
+      "appValue": "Sim",
+      "severity": "low",
+      "decisionStatus": "resolved_aligned",
+      "notes": "Confirmado: planilha tambem diz apenas 'Sim' sem detalhar tipo. Inconsistencia interna da planilha, app espelha fielmente."
+    },
+    {
+      "id": "DIV-02",
+      "entityType": "format",
+      "entityId": "FMT-ALL",
+      "field": "serie/rec",
+      "spreadsheetValue": "NOT_IN_SOURCE",
+      "appValue": "null",
+      "severity": "low",
+      "decisionStatus": "resolved_not_applicable",
+      "notes": "Confirmado: planilha NAO possui colunas serie ou rec."
+    },
+    {
+      "id": "DIV-03",
+      "entityType": "format",
+      "entityId": "FMT-ALL",
+      "field": "ranges (areaTotal, app, fc)",
+      "spreadsheetValue": "Conferido campo a campo",
+      "appValue": "Identico a planilha",
+      "severity": "resolved",
+      "decisionStatus": "resolved_aligned",
+      "notes": "Auditoria programatica conferiu 22 registros x 13 campos. Zero divergencias."
+    },
+    {
+      "id": "DIV-04",
+      "entityType": "manipulation",
+      "entityId": "MAN-ALL",
+      "field": "referencia",
+      "spreadsheetValue": "Citacoes completas (autor, revista, ano, volume, DOI)",
+      "appValue": "Citacoes abreviadas (Sobrenome et al., ano)",
+      "severity": "medium",
+      "decisionStatus": "resolved_by_FINAL-01",
+      "resolvedDate": "2026-03-25",
+      "notes": "FINAL-01: Resolvido por politica de exibicao. Campo 'referenciaCompleta' adicionado a todos os 15 registros de manipulation.json. Formato abreviado exibido por padrao, citacao completa disponivel via tooltip. Ambos os formatos coexistem sem divergencia."
+    },
+    {
+      "id": "DIV-05",
+      "entityType": "manipulation",
+      "entityId": "MAN-07",
+      "field": "efeitoFC",
+      "spreadsheetValue": "↑ FC (apesar de menos espaço útil)",
+      "appValue": "↑ FC (apesar de menos espaço útil)",
+      "severity": "medium",
+      "decisionStatus": "resolved_by_DEC-02",
+      "resolvedDate": "2026-03-25",
+      "notes": "Corrigido: adicionado 'apesar de' conforme planilha. App agora identico a fonte."
+    },
+    {
+      "id": "DIV-06",
+      "entityType": "manipulation",
+      "entityId": "MAN-07",
+      "field": "efeitoVel",
+      "spreadsheetValue": "↑ HIR (mais transições)",
+      "appValue": "↑ HIR (mais transições)",
+      "severity": "low",
+      "decisionStatus": "resolved_by_DEC-03",
+      "resolvedDate": "2026-03-25",
+      "notes": "Corrigido: adicionado 'mais' conforme planilha. App agora identico a fonte."
+    },
+    {
+      "id": "DIV-07",
+      "entityType": "manipulation",
+      "entityId": "MAN-09",
+      "field": "efeitoFC",
+      "spreadsheetValue": "↑ FC jogadores regulares",
+      "appValue": "↑ FC jogadores regulares",
+      "severity": "low",
+      "decisionStatus": "resolved_by_DEC-04",
+      "resolvedDate": "2026-03-25",
+      "notes": "Corrigido: 'jog.' expandido para 'jogadores' conforme planilha."
+    },
+    {
+      "id": "DIV-08",
+      "entityType": "manipulation",
+      "entityId": "MAN-11",
+      "field": "efeito",
+      "spreadsheetValue": "Coringa rotativo vs. desequil. fixo",
+      "appValue": "Rotativo vs. fixo",
+      "severity": "high",
+      "decisionStatus": "resolved_by_DEC-01_human_override",
+      "resolvedDate": "2026-03-25",
+      "notes": "DECISAO HUMANA: manter o valor simplificado do app ('Rotativo vs. fixo') mesmo com a planilha usando texto mais detalhado. Desvio intencional e documentado."
+    },
+    {
+      "id": "DIV-09",
+      "entityType": "manipulation",
+      "entityId": "MAN-11",
+      "field": "efeitoFC",
+      "spreadsheetValue": "↑ RPE (rotativo vs. fixo)",
+      "appValue": "↑ RPE (rotativo vs. fixo)",
+      "severity": "medium",
+      "decisionStatus": "resolved_by_DEC-05",
+      "resolvedDate": "2026-03-25",
+      "notes": "Corrigido: adicionado 'vs. fixo' conforme planilha."
+    },
+    {
+      "id": "DIV-10",
+      "entityType": "manipulation",
+      "entityId": "MAN-12",
+      "field": "efeitoDist",
+      "spreadsheetValue": "Sem diferença signif.",
+      "appValue": "Sem diferença signif.",
+      "severity": "low",
+      "decisionStatus": "resolved_by_DEC-06",
+      "resolvedDate": "2026-03-25",
+      "notes": "Corrigido: 'dif.' expandido para 'diferenca' conforme planilha."
+    },
+    {
+      "id": "DIV-11",
+      "entityType": "manipulation",
+      "entityId": "MAN-ALL",
+      "field": "aplicacao",
+      "spreadsheetValue": "NOT_IN_SOURCE",
+      "appValue": "REMOVIDO",
+      "severity": "medium",
+      "decisionStatus": "resolved_by_DEC-07",
+      "resolvedDate": "2026-03-25",
+      "notes": "Campo 'aplicacao' removido de todos os 15 registros de manipulation.json. Nunca existiu na planilha e duplicava o campo 'efeito'. Nenhum componente UI o referenciava."
+    },
+    {
+      "id": "DIV-12",
+      "entityType": "reference",
+      "entityId": "REF-05/REF-06",
+      "field": "citation",
+      "spreadsheetValue": "[5] Casamichana D, Bradley PS, Castellano J. PLOS ONE. 2020",
+      "appValue": "REF-05 canonico ('Casamichana et al., 2020'). REF-06 removido.",
+      "severity": "medium",
+      "decisionStatus": "resolved_by_DEC-08",
+      "resolvedDate": "2026-03-25",
+      "notes": "Duplicata unificada. REF-05 mantido como registro canonico com fullCitation adicionada. REF-06 removido. references.json agora tem 14 registros."
+    },
+    {
+      "id": "DIV-13",
+      "entityType": "reference",
+      "entityId": "REF-15",
+      "field": "citation",
+      "spreadsheetValue": "[4] Casamichana D, Castellano J, Castagna C. J Strength Cond Res. 2012;26(3):837-43",
+      "appValue": "Mantido em references.json com status excluded_no_conciliation",
+      "severity": "medium",
+      "decisionStatus": "resolved_removed_orphan_reference",
+      "resolvedDate": "2026-03-25",
+      "notes": "FINAL-02: REF-15 removido de references.json. Referencia orfa — nao citada em nenhum formato ou variavel do app. Rastreabilidade mantida neste catalogo de divergencias."
+    },
+    {
+      "id": "DIV-14",
+      "entityType": "reference",
+      "entityId": "REF-10",
+      "field": "citation_and_doi",
+      "spreadsheetValue": "[8] Dello Iacono et al., 2023 (DOI errado: 10.1080/15438627.2014.951761)",
+      "appValue": "Kobi et al., 2026 (corrigido por decisao humana)",
+      "severity": "high",
+      "decisionStatus": "resolved_by_DEC-10_human_correction",
+      "resolvedDate": "2026-03-25",
+      "notes": "CORRECAO HUMANA: referencia [8] da planilha tinha DOI errado (pertencia a Clemente 2014). Usuario forneceu referencia correta: Kobi O et al. Sci and Med in Football. 2026. 10(1), 73-79. doi:10.1080/24733938.2025.2471318. Aplicado em REF-10 de references.json."
+    },
+    {
+      "id": "DIV-15",
+      "entityType": "reference",
+      "entityId": "REF-08,REF-13,REF-14",
+      "field": "bibliography_presence",
+      "spreadsheetValue": "Ausentes da bibliografia principal [1]-[11]",
+      "appValue": "Presentes no app como referencias abreviadas",
+      "severity": "low",
+      "decisionStatus": "resolved_aligned",
+      "notes": "Inconsistencia interna da planilha, nao do app."
+    },
+    {
+      "id": "DIV-16",
+      "entityType": "format",
+      "entityId": "FMT-21",
+      "field": "ref",
+      "spreadsheetValue": "Dello Iacono et al., 2023",
+      "appValue": "Dello Iacono et al., 2023",
+      "severity": "medium",
+      "decisionStatus": "resolved_by_FINAL-03",
+      "resolvedDate": "2026-03-25",
+      "notes": "FINAL-03: FMT-21.ref atualizado de 'Dello Iacono et al., 2023' para 'Kobi et al., 2026' em formats.json. Consistencia restaurada com references.json (REF-10)."
+    }
+  ]
+}
