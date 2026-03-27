@@ -59,9 +59,9 @@ export default function App() {
   const { t } = useLanguage();
 
   const tabs = [
-    { id: "prescricao", label: t("tabs.prescricao"), icon: "⚽" },
-    { id: "calculadora", label: t("tabs.calculadora"), icon: "📐" },
-    { id: "variaveis", label: t("tabs.variaveis"), icon: "🔬" },
+    { id: "prescricao", label: t("tabs.prescricao"), icon: "" },
+    { id: "calculadora", label: t("tabs.calculadora"), icon: "" },
+    { id: "variaveis", label: t("tabs.variaveis"), icon: "" },
   ];
 
   const REF_TABLE = t("refTableData");
